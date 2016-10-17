@@ -1,0 +1,26 @@
+{
+  "name": "1.0.0",
+  "version": "1.0.0",
+  "description": "a server for my ios client ",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "mysql": "^2.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "xiaoke",
+  "license": "ISC"
+}

@@ -24,15 +24,43 @@
 //   }
 // });
 
-// /**
-//  * GET /api
-//  * List of API examples.
-//  */
-// exports.getApi = (req, res) => {
-//   res.render('api/index', {
-//     title: 'API Examples'
-//   });
-// };
+/**
+ * Models 
+ */
+const Adimg = require('../models/Adimg');
+
+/**
+ * GET /api
+ * List of API examples.
+ */
+
+ /**
+ * GET /api
+ * List of API examples.
+ */
+exports.getAdimg = (req, res) => {
+//存储数据
+const adimg = new Adimg();
+// adimg.find().toArray(function(err,docs){
+//     if (err) {
+//     	res.send(docs);
+//         console.log('获取失败')
+//         return;
+//     }
+//     console.log('获取成功');
+// });
+
+adimg.find({},function(err,docs){
+    if (err) {
+    	res.send(docs);
+        console.log('获取失败')
+        return;
+    }
+    console.log('获取成功');
+});
+
+
+};
 
 // /**
 //  * GET /api/foursquare

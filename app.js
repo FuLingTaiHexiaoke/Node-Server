@@ -67,7 +67,6 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  */
 app.get('/', homeController.index);
 
-
 // app.get('/', function (req, res) {
 //   //存储数据
 // var adimg = new Adimg({
@@ -88,7 +87,7 @@ app.get('/', homeController.index);
 /**
  * API examples routes.
  */
-// app.get('/api', apiController.getApi);
+app.get('/api/getAdimg', apiController.getAdimg);
 
 
 /**

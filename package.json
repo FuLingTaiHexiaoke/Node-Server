@@ -1,26 +1,37 @@
 {
-  "name": "1.0.0",
-  "version": "1.0.0",
-  "description": "a server for my ios client ",
-  "main": "app.js",
-  "directories": {
-    "test": "test"
-  },
-  "dependencies": {
-    "express": "^4.14.0",
-    "mysql": "^2.11.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "none"
-  },
+  "name": "Node_Server",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "none"
+    "url": "https://github.com/FuLingTaiHexiaoke/Node-Server"
   },
-  "keywords": [
-    "none"
-  ],
-  "author": "xiaoke",
-  "license": "ISC"
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha --reporter spec --timeout 5000"
+  },
+  "dependencies": {
+    "async": "^2.0.1",
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.15.2",
+    "chalk": "^1.1.3",
+    "connect-mongo": "^1.3.2",
+    "errorhandler": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "express-validator": "^2.20.10",
+    "mongoose": "^4.6.0",
+    "morgan": "^1.7.0",
+    "multer": "^1.2.0",
+    "mysql": "^2.11.1",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "supertest": "^2.0.0"
+  },
+  "engines": {
+    "node": "6.1.0"
+  },
+  "license": "MIT"
 }

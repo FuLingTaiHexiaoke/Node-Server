@@ -38,28 +38,27 @@ const Adimg = require('../models/Adimg');
  * GET /api
  * List of API examples.
  */
-exports.getAdimg = (req, res) => {
-//存储数据
-const adimg = new Adimg();
-// adimg.find().toArray(function(err,docs){
-//     if (err) {
-//     	res.send(docs);
-//         console.log('获取失败')
-//         return;
-//     }
-//     console.log('获取成功');
-// });
-
-adimg.find({},function(err,docs){
-    if (err) {
-    	res.send(docs);
-        console.log('获取失败')
-        return;
-    }
-    console.log('获取成功');
+// exports.getAdimg = (req, res) => {
+// //存储数据
+// const adimg = new Adimg();
+//   adimg.find(function(err, docs) {
+//     if (err) return next(err);
+//     res.send(docs);
+//   });a
+// };
+var adimg = new Adimg({_id:2, imgUrl: 'images/sorryForLate.png',imgName:'sorryForLate' });
+exports.save = function(req, res, next) {
+ adimg.save(function (err, adimg) {
+  if (err) return console.error(err);
 });
+};
 
 
+exports.getAdimg = function(req, res, next) {
+  Adimg.find(function(err, docs) {
+    if (err) return next(err);
+    res.send(docs);
+  });
 };
 
 // /**

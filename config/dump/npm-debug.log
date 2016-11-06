@@ -1,0 +1,1662 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'update' ]
+2 info using npm@3.10.8
+3 info using node@v6.8.0
+4 silly mapToRegistry name async
+5 silly mapToRegistry using default registry
+6 silly mapToRegistry registry https://registry.npmjs.org/
+7 silly mapToRegistry data Result {
+7 silly mapToRegistry   raw: 'async',
+7 silly mapToRegistry   scope: null,
+7 silly mapToRegistry   escapedName: 'async',
+7 silly mapToRegistry   name: 'async',
+7 silly mapToRegistry   rawSpec: '',
+7 silly mapToRegistry   spec: 'latest',
+7 silly mapToRegistry   type: 'tag' }
+8 silly mapToRegistry uri https://registry.npmjs.org/async
+9 silly mapToRegistry name bcrypt-nodejs
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'bcrypt-nodejs',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'bcrypt-nodejs',
+12 silly mapToRegistry   name: 'bcrypt-nodejs',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/bcrypt-nodejs
+14 silly mapToRegistry name body-parser
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry https://registry.npmjs.org/
+17 silly mapToRegistry data Result {
+17 silly mapToRegistry   raw: 'body-parser',
+17 silly mapToRegistry   scope: null,
+17 silly mapToRegistry   escapedName: 'body-parser',
+17 silly mapToRegistry   name: 'body-parser',
+17 silly mapToRegistry   rawSpec: '',
+17 silly mapToRegistry   spec: 'latest',
+17 silly mapToRegistry   type: 'tag' }
+18 silly mapToRegistry uri https://registry.npmjs.org/body-parser
+19 silly mapToRegistry name chai
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry data Result {
+22 silly mapToRegistry   raw: 'chai',
+22 silly mapToRegistry   scope: null,
+22 silly mapToRegistry   escapedName: 'chai',
+22 silly mapToRegistry   name: 'chai',
+22 silly mapToRegistry   rawSpec: '',
+22 silly mapToRegistry   spec: 'latest',
+22 silly mapToRegistry   type: 'tag' }
+23 silly mapToRegistry uri https://registry.npmjs.org/chai
+24 silly mapToRegistry name chalk
+25 silly mapToRegistry using default registry
+26 silly mapToRegistry registry https://registry.npmjs.org/
+27 silly mapToRegistry data Result {
+27 silly mapToRegistry   raw: 'chalk',
+27 silly mapToRegistry   scope: null,
+27 silly mapToRegistry   escapedName: 'chalk',
+27 silly mapToRegistry   name: 'chalk',
+27 silly mapToRegistry   rawSpec: '',
+27 silly mapToRegistry   spec: 'latest',
+27 silly mapToRegistry   type: 'tag' }
+28 silly mapToRegistry uri https://registry.npmjs.org/chalk
+29 silly mapToRegistry name connect-mongo
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry data Result {
+32 silly mapToRegistry   raw: 'connect-mongo',
+32 silly mapToRegistry   scope: null,
+32 silly mapToRegistry   escapedName: 'connect-mongo',
+32 silly mapToRegistry   name: 'connect-mongo',
+32 silly mapToRegistry   rawSpec: '',
+32 silly mapToRegistry   spec: 'latest',
+32 silly mapToRegistry   type: 'tag' }
+33 silly mapToRegistry uri https://registry.npmjs.org/connect-mongo
+34 silly mapToRegistry name errorhandler
+35 silly mapToRegistry using default registry
+36 silly mapToRegistry registry https://registry.npmjs.org/
+37 silly mapToRegistry data Result {
+37 silly mapToRegistry   raw: 'errorhandler',
+37 silly mapToRegistry   scope: null,
+37 silly mapToRegistry   escapedName: 'errorhandler',
+37 silly mapToRegistry   name: 'errorhandler',
+37 silly mapToRegistry   rawSpec: '',
+37 silly mapToRegistry   spec: 'latest',
+37 silly mapToRegistry   type: 'tag' }
+38 silly mapToRegistry uri https://registry.npmjs.org/errorhandler
+39 silly mapToRegistry name express
+40 silly mapToRegistry using default registry
+41 silly mapToRegistry registry https://registry.npmjs.org/
+42 silly mapToRegistry data Result {
+42 silly mapToRegistry   raw: 'express',
+42 silly mapToRegistry   scope: null,
+42 silly mapToRegistry   escapedName: 'express',
+42 silly mapToRegistry   name: 'express',
+42 silly mapToRegistry   rawSpec: '',
+42 silly mapToRegistry   spec: 'latest',
+42 silly mapToRegistry   type: 'tag' }
+43 silly mapToRegistry uri https://registry.npmjs.org/express
+44 silly mapToRegistry name express-session
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry data Result {
+47 silly mapToRegistry   raw: 'express-session',
+47 silly mapToRegistry   scope: null,
+47 silly mapToRegistry   escapedName: 'express-session',
+47 silly mapToRegistry   name: 'express-session',
+47 silly mapToRegistry   rawSpec: '',
+47 silly mapToRegistry   spec: 'latest',
+47 silly mapToRegistry   type: 'tag' }
+48 silly mapToRegistry uri https://registry.npmjs.org/express-session
+49 silly mapToRegistry name express-validator
+50 silly mapToRegistry using default registry
+51 silly mapToRegistry registry https://registry.npmjs.org/
+52 silly mapToRegistry data Result {
+52 silly mapToRegistry   raw: 'express-validator',
+52 silly mapToRegistry   scope: null,
+52 silly mapToRegistry   escapedName: 'express-validator',
+52 silly mapToRegistry   name: 'express-validator',
+52 silly mapToRegistry   rawSpec: '',
+52 silly mapToRegistry   spec: 'latest',
+52 silly mapToRegistry   type: 'tag' }
+53 silly mapToRegistry uri https://registry.npmjs.org/express-validator
+54 silly mapToRegistry name mocha
+55 silly mapToRegistry using default registry
+56 silly mapToRegistry registry https://registry.npmjs.org/
+57 silly mapToRegistry data Result {
+57 silly mapToRegistry   raw: 'mocha',
+57 silly mapToRegistry   scope: null,
+57 silly mapToRegistry   escapedName: 'mocha',
+57 silly mapToRegistry   name: 'mocha',
+57 silly mapToRegistry   rawSpec: '',
+57 silly mapToRegistry   spec: 'latest',
+57 silly mapToRegistry   type: 'tag' }
+58 silly mapToRegistry uri https://registry.npmjs.org/mocha
+59 silly mapToRegistry name mongoose
+60 silly mapToRegistry using default registry
+61 silly mapToRegistry registry https://registry.npmjs.org/
+62 silly mapToRegistry data Result {
+62 silly mapToRegistry   raw: 'mongoose',
+62 silly mapToRegistry   scope: null,
+62 silly mapToRegistry   escapedName: 'mongoose',
+62 silly mapToRegistry   name: 'mongoose',
+62 silly mapToRegistry   rawSpec: '',
+62 silly mapToRegistry   spec: 'latest',
+62 silly mapToRegistry   type: 'tag' }
+63 silly mapToRegistry uri https://registry.npmjs.org/mongoose
+64 silly mapToRegistry name morgan
+65 silly mapToRegistry using default registry
+66 silly mapToRegistry registry https://registry.npmjs.org/
+67 silly mapToRegistry data Result {
+67 silly mapToRegistry   raw: 'morgan',
+67 silly mapToRegistry   scope: null,
+67 silly mapToRegistry   escapedName: 'morgan',
+67 silly mapToRegistry   name: 'morgan',
+67 silly mapToRegistry   rawSpec: '',
+67 silly mapToRegistry   spec: 'latest',
+67 silly mapToRegistry   type: 'tag' }
+68 silly mapToRegistry uri https://registry.npmjs.org/morgan
+69 silly mapToRegistry name multer
+70 silly mapToRegistry using default registry
+71 silly mapToRegistry registry https://registry.npmjs.org/
+72 silly mapToRegistry data Result {
+72 silly mapToRegistry   raw: 'multer',
+72 silly mapToRegistry   scope: null,
+72 silly mapToRegistry   escapedName: 'multer',
+72 silly mapToRegistry   name: 'multer',
+72 silly mapToRegistry   rawSpec: '',
+72 silly mapToRegistry   spec: 'latest',
+72 silly mapToRegistry   type: 'tag' }
+73 silly mapToRegistry uri https://registry.npmjs.org/multer
+74 silly mapToRegistry name mysql
+75 silly mapToRegistry using default registry
+76 silly mapToRegistry registry https://registry.npmjs.org/
+77 silly mapToRegistry data Result {
+77 silly mapToRegistry   raw: 'mysql',
+77 silly mapToRegistry   scope: null,
+77 silly mapToRegistry   escapedName: 'mysql',
+77 silly mapToRegistry   name: 'mysql',
+77 silly mapToRegistry   rawSpec: '',
+77 silly mapToRegistry   spec: 'latest',
+77 silly mapToRegistry   type: 'tag' }
+78 silly mapToRegistry uri https://registry.npmjs.org/mysql
+79 silly mapToRegistry name request
+80 silly mapToRegistry using default registry
+81 silly mapToRegistry registry https://registry.npmjs.org/
+82 silly mapToRegistry data Result {
+82 silly mapToRegistry   raw: 'request',
+82 silly mapToRegistry   scope: null,
+82 silly mapToRegistry   escapedName: 'request',
+82 silly mapToRegistry   name: 'request',
+82 silly mapToRegistry   rawSpec: '',
+82 silly mapToRegistry   spec: 'latest',
+82 silly mapToRegistry   type: 'tag' }
+83 silly mapToRegistry uri https://registry.npmjs.org/request
+84 silly mapToRegistry name supertest
+85 silly mapToRegistry using default registry
+86 silly mapToRegistry registry https://registry.npmjs.org/
+87 silly mapToRegistry data Result {
+87 silly mapToRegistry   raw: 'supertest',
+87 silly mapToRegistry   scope: null,
+87 silly mapToRegistry   escapedName: 'supertest',
+87 silly mapToRegistry   name: 'supertest',
+87 silly mapToRegistry   rawSpec: '',
+87 silly mapToRegistry   spec: 'latest',
+87 silly mapToRegistry   type: 'tag' }
+88 silly mapToRegistry uri https://registry.npmjs.org/supertest
+89 verbose request uri https://registry.npmjs.org/body-parser
+90 verbose request no auth needed
+91 info attempt registry request try #1 at 20:11:39
+92 verbose request id 935a21bf65240534
+93 http request GET https://registry.npmjs.org/body-parser
+94 verbose request uri https://registry.npmjs.org/async
+95 verbose request no auth needed
+96 info attempt registry request try #1 at 20:11:39
+97 http request GET https://registry.npmjs.org/async
+98 verbose request uri https://registry.npmjs.org/chai
+99 verbose request no auth needed
+100 info attempt registry request try #1 at 20:11:39
+101 http request GET https://registry.npmjs.org/chai
+102 verbose request uri https://registry.npmjs.org/bcrypt-nodejs
+103 verbose request no auth needed
+104 info attempt registry request try #1 at 20:11:39
+105 http request GET https://registry.npmjs.org/bcrypt-nodejs
+106 verbose request uri https://registry.npmjs.org/connect-mongo
+107 verbose request no auth needed
+108 info attempt registry request try #1 at 20:11:40
+109 http request GET https://registry.npmjs.org/connect-mongo
+110 verbose request uri https://registry.npmjs.org/errorhandler
+111 verbose request no auth needed
+112 info attempt registry request try #1 at 20:11:40
+113 http request GET https://registry.npmjs.org/errorhandler
+114 verbose request uri https://registry.npmjs.org/express-session
+115 verbose request no auth needed
+116 info attempt registry request try #1 at 20:11:40
+117 http request GET https://registry.npmjs.org/express-session
+118 verbose request uri https://registry.npmjs.org/express-validator
+119 verbose request no auth needed
+120 info attempt registry request try #1 at 20:11:40
+121 http request GET https://registry.npmjs.org/express-validator
+122 verbose request uri https://registry.npmjs.org/mongoose
+123 verbose request no auth needed
+124 info attempt registry request try #1 at 20:11:40
+125 http request GET https://registry.npmjs.org/mongoose
+126 verbose request uri https://registry.npmjs.org/morgan
+127 verbose request no auth needed
+128 info attempt registry request try #1 at 20:11:40
+129 http request GET https://registry.npmjs.org/morgan
+130 verbose request uri https://registry.npmjs.org/mocha
+131 verbose request no auth needed
+132 info attempt registry request try #1 at 20:11:40
+133 http request GET https://registry.npmjs.org/mocha
+134 verbose request uri https://registry.npmjs.org/supertest
+135 verbose request no auth needed
+136 info attempt registry request try #1 at 20:11:40
+137 http request GET https://registry.npmjs.org/supertest
+138 verbose request uri https://registry.npmjs.org/multer
+139 verbose request no auth needed
+140 info attempt registry request try #1 at 20:11:40
+141 http request GET https://registry.npmjs.org/multer
+142 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+143 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+144 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+145 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+146 verbose request uri https://registry.npmjs.org/chalk
+147 verbose request no auth needed
+148 info attempt registry request try #1 at 20:12:10
+149 verbose etag "9QDDGGP6IP1XZ21CW31E1DWMR"
+150 http request GET https://registry.npmjs.org/chalk
+151 verbose request uri https://registry.npmjs.org/express
+152 verbose request no auth needed
+153 info attempt registry request try #1 at 20:12:10
+154 verbose etag "D7X342N1IK7WK9IHE8LS8S4CI"
+155 http request GET https://registry.npmjs.org/express
+156 verbose request uri https://registry.npmjs.org/request
+157 verbose request no auth needed
+158 info attempt registry request try #1 at 20:12:10
+159 verbose etag "BKQENGAPMAD8CILX5VS4XECIZ"
+160 http request GET https://registry.npmjs.org/request
+161 verbose request uri https://registry.npmjs.org/mysql
+162 verbose request no auth needed
+163 info attempt registry request try #1 at 20:12:10
+164 verbose etag "GF8SN3JYKD5EXFD2GOCT4V9E"
+165 http request GET https://registry.npmjs.org/mysql
+166 http 304 https://registry.npmjs.org/chalk
+167 verbose headers { date: 'Sun, 06 Nov 2016 12:12:11 GMT',
+167 verbose headers   via: '1.1 varnish',
+167 verbose headers   'cache-control': 'max-age=300',
+167 verbose headers   etag: '"9QDDGGP6IP1XZ21CW31E1DWMR"',
+167 verbose headers   age: '261',
+167 verbose headers   connection: 'keep-alive',
+167 verbose headers   'x-served-by': 'cache-hkg6826-HKG',
+167 verbose headers   'x-cache': 'HIT',
+167 verbose headers   'x-cache-hits': '12',
+167 verbose headers   'x-timer': 'S1478434331.176865,VS0,VE0',
+167 verbose headers   vary: 'Accept-Encoding' }
+168 silly get cb [ 304,
+168 silly get   { date: 'Sun, 06 Nov 2016 12:12:11 GMT',
+168 silly get     via: '1.1 varnish',
+168 silly get     'cache-control': 'max-age=300',
+168 silly get     etag: '"9QDDGGP6IP1XZ21CW31E1DWMR"',
+168 silly get     age: '261',
+168 silly get     connection: 'keep-alive',
+168 silly get     'x-served-by': 'cache-hkg6826-HKG',
+168 silly get     'x-cache': 'HIT',
+168 silly get     'x-cache-hits': '12',
+168 silly get     'x-timer': 'S1478434331.176865,VS0,VE0',
+168 silly get     vary: 'Accept-Encoding' } ]
+169 verbose etag https://registry.npmjs.org/chalk from cache
+170 verbose get saving chalk to /Users/Psylife/.npm/registry.npmjs.org/chalk/.cache.json
+171 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+172 http 200 https://registry.npmjs.org/morgan
+173 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+173 verbose headers   etag: '"6ELQ55TMGX1ZWJFB0YB0QI6FG"',
+173 verbose headers   'content-type': 'application/json',
+173 verbose headers   'content-encoding': 'gzip',
+173 verbose headers   'cache-control': 'max-age=300',
+173 verbose headers   'content-length': '9332',
+173 verbose headers   'accept-ranges': 'bytes',
+173 verbose headers   date: 'Sun, 06 Nov 2016 12:12:11 GMT',
+173 verbose headers   via: '1.1 varnish',
+173 verbose headers   age: '43',
+173 verbose headers   connection: 'keep-alive',
+173 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+173 verbose headers   'x-cache': 'HIT',
+173 verbose headers   'x-cache-hits': '1',
+173 verbose headers   'x-timer': 'S1478434331.184137,VS0,VE0',
+173 verbose headers   vary: 'Accept-Encoding' }
+174 silly get cb [ 200,
+174 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+174 silly get     etag: '"6ELQ55TMGX1ZWJFB0YB0QI6FG"',
+174 silly get     'content-type': 'application/json',
+174 silly get     'content-encoding': 'gzip',
+174 silly get     'cache-control': 'max-age=300',
+174 silly get     'content-length': '9332',
+174 silly get     'accept-ranges': 'bytes',
+174 silly get     date: 'Sun, 06 Nov 2016 12:12:11 GMT',
+174 silly get     via: '1.1 varnish',
+174 silly get     age: '43',
+174 silly get     connection: 'keep-alive',
+174 silly get     'x-served-by': 'cache-hkg6825-HKG',
+174 silly get     'x-cache': 'HIT',
+174 silly get     'x-cache-hits': '1',
+174 silly get     'x-timer': 'S1478434331.184137,VS0,VE0',
+174 silly get     vary: 'Accept-Encoding' } ]
+175 verbose get saving morgan to /Users/Psylife/.npm/registry.npmjs.org/morgan/.cache.json
+176 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+177 http 200 https://registry.npmjs.org/express-validator
+178 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+178 verbose headers   etag: '"A1MHGPZ1I0N143SQP6IYJUSYQ"',
+178 verbose headers   'content-type': 'application/json',
+178 verbose headers   'content-encoding': 'gzip',
+178 verbose headers   'cache-control': 'max-age=300',
+178 verbose headers   'content-length': '14791',
+178 verbose headers   'accept-ranges': 'bytes',
+178 verbose headers   date: 'Sun, 06 Nov 2016 12:12:11 GMT',
+178 verbose headers   via: '1.1 varnish',
+178 verbose headers   age: '125',
+178 verbose headers   connection: 'keep-alive',
+178 verbose headers   'x-served-by': 'cache-hkg6826-HKG',
+178 verbose headers   'x-cache': 'HIT',
+178 verbose headers   'x-cache-hits': '1',
+178 verbose headers   'x-timer': 'S1478434331.202556,VS0,VE0',
+178 verbose headers   vary: 'Accept-Encoding' }
+179 silly get cb [ 200,
+179 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+179 silly get     etag: '"A1MHGPZ1I0N143SQP6IYJUSYQ"',
+179 silly get     'content-type': 'application/json',
+179 silly get     'content-encoding': 'gzip',
+179 silly get     'cache-control': 'max-age=300',
+179 silly get     'content-length': '14791',
+179 silly get     'accept-ranges': 'bytes',
+179 silly get     date: 'Sun, 06 Nov 2016 12:12:11 GMT',
+179 silly get     via: '1.1 varnish',
+179 silly get     age: '125',
+179 silly get     connection: 'keep-alive',
+179 silly get     'x-served-by': 'cache-hkg6826-HKG',
+179 silly get     'x-cache': 'HIT',
+179 silly get     'x-cache-hits': '1',
+179 silly get     'x-timer': 'S1478434331.202556,VS0,VE0',
+179 silly get     vary: 'Accept-Encoding' } ]
+180 verbose get saving express-validator to /Users/Psylife/.npm/registry.npmjs.org/express-validator/.cache.json
+181 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+182 http 200 https://registry.npmjs.org/mysql
+183 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+183 verbose headers   etag: '"93AZBJQ6PWI4IRWB06YJB21NX"',
+183 verbose headers   'content-type': 'application/json',
+183 verbose headers   'content-encoding': 'gzip',
+183 verbose headers   'cache-control': 'max-age=300',
+183 verbose headers   'content-length': '30558',
+183 verbose headers   'accept-ranges': 'bytes',
+183 verbose headers   date: 'Sun, 06 Nov 2016 12:12:11 GMT',
+183 verbose headers   via: '1.1 varnish',
+183 verbose headers   age: '121',
+183 verbose headers   connection: 'keep-alive',
+183 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+183 verbose headers   'x-cache': 'HIT',
+183 verbose headers   'x-cache-hits': '1',
+183 verbose headers   'x-timer': 'S1478434331.203930,VS0,VE0',
+183 verbose headers   vary: 'Accept-Encoding' }
+184 silly get cb [ 200,
+184 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+184 silly get     etag: '"93AZBJQ6PWI4IRWB06YJB21NX"',
+184 silly get     'content-type': 'application/json',
+184 silly get     'content-encoding': 'gzip',
+184 silly get     'cache-control': 'max-age=300',
+184 silly get     'content-length': '30558',
+184 silly get     'accept-ranges': 'bytes',
+184 silly get     date: 'Sun, 06 Nov 2016 12:12:11 GMT',
+184 silly get     via: '1.1 varnish',
+184 silly get     age: '121',
+184 silly get     connection: 'keep-alive',
+184 silly get     'x-served-by': 'cache-hkg6825-HKG',
+184 silly get     'x-cache': 'HIT',
+184 silly get     'x-cache-hits': '1',
+184 silly get     'x-timer': 'S1478434331.203930,VS0,VE0',
+184 silly get     vary: 'Accept-Encoding' } ]
+185 verbose get saving mysql to /Users/Psylife/.npm/registry.npmjs.org/mysql/.cache.json
+186 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+187 http 200 https://registry.npmjs.org/mocha
+188 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+188 verbose headers   etag: '"2D70H9IT47R9Z8TAPEICRUIIM"',
+188 verbose headers   'content-type': 'application/json',
+188 verbose headers   'content-encoding': 'gzip',
+188 verbose headers   'cache-control': 'max-age=300',
+188 verbose headers   'content-length': '69620',
+188 verbose headers   'accept-ranges': 'bytes',
+188 verbose headers   date: 'Sun, 06 Nov 2016 12:12:11 GMT',
+188 verbose headers   via: '1.1 varnish',
+188 verbose headers   age: '96',
+188 verbose headers   connection: 'keep-alive',
+188 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+188 verbose headers   'x-cache': 'HIT',
+188 verbose headers   'x-cache-hits': '1',
+188 verbose headers   'x-timer': 'S1478434331.179376,VS0,VE1',
+188 verbose headers   vary: 'Accept-Encoding' }
+189 silly get cb [ 200,
+189 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+189 silly get     etag: '"2D70H9IT47R9Z8TAPEICRUIIM"',
+189 silly get     'content-type': 'application/json',
+189 silly get     'content-encoding': 'gzip',
+189 silly get     'cache-control': 'max-age=300',
+189 silly get     'content-length': '69620',
+189 silly get     'accept-ranges': 'bytes',
+189 silly get     date: 'Sun, 06 Nov 2016 12:12:11 GMT',
+189 silly get     via: '1.1 varnish',
+189 silly get     age: '96',
+189 silly get     connection: 'keep-alive',
+189 silly get     'x-served-by': 'cache-hkg6825-HKG',
+189 silly get     'x-cache': 'HIT',
+189 silly get     'x-cache-hits': '1',
+189 silly get     'x-timer': 'S1478434331.179376,VS0,VE1',
+189 silly get     vary: 'Accept-Encoding' } ]
+190 verbose get saving mocha to /Users/Psylife/.npm/registry.npmjs.org/mocha/.cache.json
+191 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+192 http 200 https://registry.npmjs.org/express-session
+193 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+193 verbose headers   etag: '"A61UCUBOU9Q1LLYF1GWHYJMRD"',
+193 verbose headers   'content-type': 'application/json',
+193 verbose headers   'content-encoding': 'gzip',
+193 verbose headers   'cache-control': 'max-age=300',
+193 verbose headers   'content-length': '19623',
+193 verbose headers   'accept-ranges': 'bytes',
+193 verbose headers   date: 'Sun, 06 Nov 2016 12:12:12 GMT',
+193 verbose headers   via: '1.1 varnish',
+193 verbose headers   age: '45',
+193 verbose headers   connection: 'keep-alive',
+193 verbose headers   'x-served-by': 'cache-hkg6821-HKG',
+193 verbose headers   'x-cache': 'HIT',
+193 verbose headers   'x-cache-hits': '1',
+193 verbose headers   'x-timer': 'S1478434332.576075,VS0,VE0',
+193 verbose headers   vary: 'Accept-Encoding' }
+194 silly get cb [ 200,
+194 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+194 silly get     etag: '"A61UCUBOU9Q1LLYF1GWHYJMRD"',
+194 silly get     'content-type': 'application/json',
+194 silly get     'content-encoding': 'gzip',
+194 silly get     'cache-control': 'max-age=300',
+194 silly get     'content-length': '19623',
+194 silly get     'accept-ranges': 'bytes',
+194 silly get     date: 'Sun, 06 Nov 2016 12:12:12 GMT',
+194 silly get     via: '1.1 varnish',
+194 silly get     age: '45',
+194 silly get     connection: 'keep-alive',
+194 silly get     'x-served-by': 'cache-hkg6821-HKG',
+194 silly get     'x-cache': 'HIT',
+194 silly get     'x-cache-hits': '1',
+194 silly get     'x-timer': 'S1478434332.576075,VS0,VE0',
+194 silly get     vary: 'Accept-Encoding' } ]
+195 verbose get saving express-session to /Users/Psylife/.npm/registry.npmjs.org/express-session/.cache.json
+196 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+197 http 200 https://registry.npmjs.org/supertest
+198 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+198 verbose headers   etag: '"CL2WYNSW66B4FPBYC3BUMY909"',
+198 verbose headers   'content-type': 'application/json',
+198 verbose headers   'content-encoding': 'gzip',
+198 verbose headers   'cache-control': 'max-age=300',
+198 verbose headers   'content-length': '8473',
+198 verbose headers   'accept-ranges': 'bytes',
+198 verbose headers   date: 'Sun, 06 Nov 2016 12:12:12 GMT',
+198 verbose headers   via: '1.1 varnish',
+198 verbose headers   age: '20',
+198 verbose headers   connection: 'keep-alive',
+198 verbose headers   'x-served-by': 'cache-hkg6824-HKG',
+198 verbose headers   'x-cache': 'HIT',
+198 verbose headers   'x-cache-hits': '1',
+198 verbose headers   'x-timer': 'S1478434332.624334,VS0,VE0',
+198 verbose headers   vary: 'Accept-Encoding' }
+199 silly get cb [ 200,
+199 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+199 silly get     etag: '"CL2WYNSW66B4FPBYC3BUMY909"',
+199 silly get     'content-type': 'application/json',
+199 silly get     'content-encoding': 'gzip',
+199 silly get     'cache-control': 'max-age=300',
+199 silly get     'content-length': '8473',
+199 silly get     'accept-ranges': 'bytes',
+199 silly get     date: 'Sun, 06 Nov 2016 12:12:12 GMT',
+199 silly get     via: '1.1 varnish',
+199 silly get     age: '20',
+199 silly get     connection: 'keep-alive',
+199 silly get     'x-served-by': 'cache-hkg6824-HKG',
+199 silly get     'x-cache': 'HIT',
+199 silly get     'x-cache-hits': '1',
+199 silly get     'x-timer': 'S1478434332.624334,VS0,VE0',
+199 silly get     vary: 'Accept-Encoding' } ]
+200 verbose get saving supertest to /Users/Psylife/.npm/registry.npmjs.org/supertest/.cache.json
+201 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+202 http 200 https://registry.npmjs.org/connect-mongo
+203 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+203 verbose headers   etag: '"DVJXTMKCO52RNENATP0T1J9TF"',
+203 verbose headers   'content-type': 'application/json',
+203 verbose headers   'content-encoding': 'gzip',
+203 verbose headers   'cache-control': 'max-age=300',
+203 verbose headers   'content-length': '9898',
+203 verbose headers   'accept-ranges': 'bytes',
+203 verbose headers   date: 'Sun, 06 Nov 2016 12:12:12 GMT',
+203 verbose headers   via: '1.1 varnish',
+203 verbose headers   age: '44',
+203 verbose headers   connection: 'keep-alive',
+203 verbose headers   'x-served-by': 'cache-hkg6823-HKG',
+203 verbose headers   'x-cache': 'HIT',
+203 verbose headers   'x-cache-hits': '1',
+203 verbose headers   'x-timer': 'S1478434332.620226,VS0,VE0',
+203 verbose headers   vary: 'Accept-Encoding' }
+204 silly get cb [ 200,
+204 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+204 silly get     etag: '"DVJXTMKCO52RNENATP0T1J9TF"',
+204 silly get     'content-type': 'application/json',
+204 silly get     'content-encoding': 'gzip',
+204 silly get     'cache-control': 'max-age=300',
+204 silly get     'content-length': '9898',
+204 silly get     'accept-ranges': 'bytes',
+204 silly get     date: 'Sun, 06 Nov 2016 12:12:12 GMT',
+204 silly get     via: '1.1 varnish',
+204 silly get     age: '44',
+204 silly get     connection: 'keep-alive',
+204 silly get     'x-served-by': 'cache-hkg6823-HKG',
+204 silly get     'x-cache': 'HIT',
+204 silly get     'x-cache-hits': '1',
+204 silly get     'x-timer': 'S1478434332.620226,VS0,VE0',
+204 silly get     vary: 'Accept-Encoding' } ]
+205 verbose get saving connect-mongo to /Users/Psylife/.npm/registry.npmjs.org/connect-mongo/.cache.json
+206 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+207 http 200 https://registry.npmjs.org/mongoose
+208 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+208 verbose headers   etag: '"C0A3VW3UAMDEEJ2897WT397J8"',
+208 verbose headers   'content-type': 'application/json',
+208 verbose headers   'content-encoding': 'gzip',
+208 verbose headers   'cache-control': 'max-age=300',
+208 verbose headers   'content-length': '54800',
+208 verbose headers   'accept-ranges': 'bytes',
+208 verbose headers   date: 'Sun, 06 Nov 2016 12:12:12 GMT',
+208 verbose headers   via: '1.1 varnish',
+208 verbose headers   age: '44',
+208 verbose headers   connection: 'keep-alive',
+208 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+208 verbose headers   'x-cache': 'HIT',
+208 verbose headers   'x-cache-hits': '1',
+208 verbose headers   'x-timer': 'S1478434332.246120,VS0,VE0',
+208 verbose headers   vary: 'Accept-Encoding' }
+209 silly get cb [ 200,
+209 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+209 silly get     etag: '"C0A3VW3UAMDEEJ2897WT397J8"',
+209 silly get     'content-type': 'application/json',
+209 silly get     'content-encoding': 'gzip',
+209 silly get     'cache-control': 'max-age=300',
+209 silly get     'content-length': '54800',
+209 silly get     'accept-ranges': 'bytes',
+209 silly get     date: 'Sun, 06 Nov 2016 12:12:12 GMT',
+209 silly get     via: '1.1 varnish',
+209 silly get     age: '44',
+209 silly get     connection: 'keep-alive',
+209 silly get     'x-served-by': 'cache-hkg6825-HKG',
+209 silly get     'x-cache': 'HIT',
+209 silly get     'x-cache-hits': '1',
+209 silly get     'x-timer': 'S1478434332.246120,VS0,VE0',
+209 silly get     vary: 'Accept-Encoding' } ]
+210 verbose get saving mongoose to /Users/Psylife/.npm/registry.npmjs.org/mongoose/.cache.json
+211 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+212 http 200 https://registry.npmjs.org/multer
+213 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+213 verbose headers   etag: '"DD7FJJ43TN6CQDJWG8DH90O2R"',
+213 verbose headers   'content-type': 'application/json',
+213 verbose headers   'content-encoding': 'gzip',
+213 verbose headers   'cache-control': 'max-age=300',
+213 verbose headers   'content-length': '10060',
+213 verbose headers   'accept-ranges': 'bytes',
+213 verbose headers   date: 'Sun, 06 Nov 2016 12:12:13 GMT',
+213 verbose headers   via: '1.1 varnish',
+213 verbose headers   age: '124',
+213 verbose headers   connection: 'keep-alive',
+213 verbose headers   'x-served-by': 'cache-hkg6824-HKG',
+213 verbose headers   'x-cache': 'HIT',
+213 verbose headers   'x-cache-hits': '12',
+213 verbose headers   'x-timer': 'S1478434333.101673,VS0,VE0',
+213 verbose headers   vary: 'Accept-Encoding' }
+214 silly get cb [ 200,
+214 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+214 silly get     etag: '"DD7FJJ43TN6CQDJWG8DH90O2R"',
+214 silly get     'content-type': 'application/json',
+214 silly get     'content-encoding': 'gzip',
+214 silly get     'cache-control': 'max-age=300',
+214 silly get     'content-length': '10060',
+214 silly get     'accept-ranges': 'bytes',
+214 silly get     date: 'Sun, 06 Nov 2016 12:12:13 GMT',
+214 silly get     via: '1.1 varnish',
+214 silly get     age: '124',
+214 silly get     connection: 'keep-alive',
+214 silly get     'x-served-by': 'cache-hkg6824-HKG',
+214 silly get     'x-cache': 'HIT',
+214 silly get     'x-cache-hits': '12',
+214 silly get     'x-timer': 'S1478434333.101673,VS0,VE0',
+214 silly get     vary: 'Accept-Encoding' } ]
+215 verbose get saving multer to /Users/Psylife/.npm/registry.npmjs.org/multer/.cache.json
+216 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+217 http 200 https://registry.npmjs.org/errorhandler
+218 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+218 verbose headers   etag: '"395UY5C97USF6D6Y5FWVSLOFR"',
+218 verbose headers   'content-type': 'application/json',
+218 verbose headers   'content-encoding': 'gzip',
+218 verbose headers   'cache-control': 'max-age=300',
+218 verbose headers   'content-length': '6011',
+218 verbose headers   'accept-ranges': 'bytes',
+218 verbose headers   date: 'Sun, 06 Nov 2016 12:12:17 GMT',
+218 verbose headers   via: '1.1 varnish',
+218 verbose headers   age: '103',
+218 verbose headers   connection: 'keep-alive',
+218 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+218 verbose headers   'x-cache': 'HIT',
+218 verbose headers   'x-cache-hits': '1',
+218 verbose headers   'x-timer': 'S1478434337.261000,VS0,VE0',
+218 verbose headers   vary: 'Accept-Encoding' }
+219 silly get cb [ 200,
+219 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+219 silly get     etag: '"395UY5C97USF6D6Y5FWVSLOFR"',
+219 silly get     'content-type': 'application/json',
+219 silly get     'content-encoding': 'gzip',
+219 silly get     'cache-control': 'max-age=300',
+219 silly get     'content-length': '6011',
+219 silly get     'accept-ranges': 'bytes',
+219 silly get     date: 'Sun, 06 Nov 2016 12:12:17 GMT',
+219 silly get     via: '1.1 varnish',
+219 silly get     age: '103',
+219 silly get     connection: 'keep-alive',
+219 silly get     'x-served-by': 'cache-hkg6825-HKG',
+219 silly get     'x-cache': 'HIT',
+219 silly get     'x-cache-hits': '1',
+219 silly get     'x-timer': 'S1478434337.261000,VS0,VE0',
+219 silly get     vary: 'Accept-Encoding' } ]
+220 verbose get saving errorhandler to /Users/Psylife/.npm/registry.npmjs.org/errorhandler/.cache.json
+221 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+222 http 304 https://registry.npmjs.org/request
+223 verbose headers { date: 'Sun, 06 Nov 2016 12:12:15 GMT',
+223 verbose headers   via: '1.1 varnish',
+223 verbose headers   'cache-control': 'max-age=300',
+223 verbose headers   etag: '"BKQENGAPMAD8CILX5VS4XECIZ"',
+223 verbose headers   age: '45',
+223 verbose headers   connection: 'keep-alive',
+223 verbose headers   'x-served-by': 'cache-hkg6824-HKG',
+223 verbose headers   'x-cache': 'HIT',
+223 verbose headers   'x-cache-hits': '2',
+223 verbose headers   'x-timer': 'S1478434335.457525,VS0,VE0',
+223 verbose headers   vary: 'Accept-Encoding' }
+224 silly get cb [ 304,
+224 silly get   { date: 'Sun, 06 Nov 2016 12:12:15 GMT',
+224 silly get     via: '1.1 varnish',
+224 silly get     'cache-control': 'max-age=300',
+224 silly get     etag: '"BKQENGAPMAD8CILX5VS4XECIZ"',
+224 silly get     age: '45',
+224 silly get     connection: 'keep-alive',
+224 silly get     'x-served-by': 'cache-hkg6824-HKG',
+224 silly get     'x-cache': 'HIT',
+224 silly get     'x-cache-hits': '2',
+224 silly get     'x-timer': 'S1478434335.457525,VS0,VE0',
+224 silly get     vary: 'Accept-Encoding' } ]
+225 verbose etag https://registry.npmjs.org/request from cache
+226 verbose get saving request to /Users/Psylife/.npm/registry.npmjs.org/request/.cache.json
+227 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+228 info attempt registry request try #2 at 20:12:20
+229 http request GET https://registry.npmjs.org/bcrypt-nodejs
+230 info attempt registry request try #2 at 20:12:20
+231 http request GET https://registry.npmjs.org/chai
+232 info attempt registry request try #2 at 20:12:20
+233 http request GET https://registry.npmjs.org/async
+234 info attempt registry request try #2 at 20:12:20
+235 http request GET https://registry.npmjs.org/body-parser
+236 http 200 https://registry.npmjs.org/bcrypt-nodejs
+237 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+237 verbose headers   etag: '"XEJPJ07UY1TOHUQ8OYI9Y5R1"',
+237 verbose headers   'content-type': 'application/json',
+237 verbose headers   'content-encoding': 'gzip',
+237 verbose headers   'cache-control': 'max-age=300',
+237 verbose headers   'content-length': '3003',
+237 verbose headers   'accept-ranges': 'bytes',
+237 verbose headers   date: 'Sun, 06 Nov 2016 12:12:20 GMT',
+237 verbose headers   via: '1.1 varnish',
+237 verbose headers   age: '106',
+237 verbose headers   connection: 'keep-alive',
+237 verbose headers   'x-served-by': 'cache-hkg6826-HKG',
+237 verbose headers   'x-cache': 'HIT',
+237 verbose headers   'x-cache-hits': '1',
+237 verbose headers   'x-timer': 'S1478434340.424368,VS0,VE0',
+237 verbose headers   vary: 'Accept-Encoding' }
+238 silly get cb [ 200,
+238 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+238 silly get     etag: '"XEJPJ07UY1TOHUQ8OYI9Y5R1"',
+238 silly get     'content-type': 'application/json',
+238 silly get     'content-encoding': 'gzip',
+238 silly get     'cache-control': 'max-age=300',
+238 silly get     'content-length': '3003',
+238 silly get     'accept-ranges': 'bytes',
+238 silly get     date: 'Sun, 06 Nov 2016 12:12:20 GMT',
+238 silly get     via: '1.1 varnish',
+238 silly get     age: '106',
+238 silly get     connection: 'keep-alive',
+238 silly get     'x-served-by': 'cache-hkg6826-HKG',
+238 silly get     'x-cache': 'HIT',
+238 silly get     'x-cache-hits': '1',
+238 silly get     'x-timer': 'S1478434340.424368,VS0,VE0',
+238 silly get     vary: 'Accept-Encoding' } ]
+239 verbose get saving bcrypt-nodejs to /Users/Psylife/.npm/registry.npmjs.org/bcrypt-nodejs/.cache.json
+240 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+241 http 200 https://registry.npmjs.org/chai
+242 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+242 verbose headers   etag: '"8MTMU812BUNKUSXMIHM789A4B"',
+242 verbose headers   'content-type': 'application/json',
+242 verbose headers   'content-encoding': 'gzip',
+242 verbose headers   'cache-control': 'max-age=300',
+242 verbose headers   'content-length': '12256',
+242 verbose headers   'accept-ranges': 'bytes',
+242 verbose headers   date: 'Sun, 06 Nov 2016 12:12:20 GMT',
+242 verbose headers   via: '1.1 varnish',
+242 verbose headers   age: '29',
+242 verbose headers   connection: 'keep-alive',
+242 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+242 verbose headers   'x-cache': 'HIT',
+242 verbose headers   'x-cache-hits': '1',
+242 verbose headers   'x-timer': 'S1478434340.430438,VS0,VE0',
+242 verbose headers   vary: 'Accept-Encoding' }
+243 silly get cb [ 200,
+243 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+243 silly get     etag: '"8MTMU812BUNKUSXMIHM789A4B"',
+243 silly get     'content-type': 'application/json',
+243 silly get     'content-encoding': 'gzip',
+243 silly get     'cache-control': 'max-age=300',
+243 silly get     'content-length': '12256',
+243 silly get     'accept-ranges': 'bytes',
+243 silly get     date: 'Sun, 06 Nov 2016 12:12:20 GMT',
+243 silly get     via: '1.1 varnish',
+243 silly get     age: '29',
+243 silly get     connection: 'keep-alive',
+243 silly get     'x-served-by': 'cache-hkg6825-HKG',
+243 silly get     'x-cache': 'HIT',
+243 silly get     'x-cache-hits': '1',
+243 silly get     'x-timer': 'S1478434340.430438,VS0,VE0',
+243 silly get     vary: 'Accept-Encoding' } ]
+244 verbose get saving chai to /Users/Psylife/.npm/registry.npmjs.org/chai/.cache.json
+245 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+246 http 200 https://registry.npmjs.org/body-parser
+247 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+247 verbose headers   etag: '"BAWMRWFP9J3CPUGZUA6HBBTPH"',
+247 verbose headers   'content-type': 'application/json',
+247 verbose headers   'content-encoding': 'gzip',
+247 verbose headers   'cache-control': 'max-age=300',
+247 verbose headers   'content-length': '16485',
+247 verbose headers   'accept-ranges': 'bytes',
+247 verbose headers   date: 'Sun, 06 Nov 2016 12:12:20 GMT',
+247 verbose headers   via: '1.1 varnish',
+247 verbose headers   age: '140',
+247 verbose headers   connection: 'keep-alive',
+247 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+247 verbose headers   'x-cache': 'HIT',
+247 verbose headers   'x-cache-hits': '2',
+247 verbose headers   'x-timer': 'S1478434340.428985,VS0,VE0',
+247 verbose headers   vary: 'Accept-Encoding' }
+248 silly get cb [ 200,
+248 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+248 silly get     etag: '"BAWMRWFP9J3CPUGZUA6HBBTPH"',
+248 silly get     'content-type': 'application/json',
+248 silly get     'content-encoding': 'gzip',
+248 silly get     'cache-control': 'max-age=300',
+248 silly get     'content-length': '16485',
+248 silly get     'accept-ranges': 'bytes',
+248 silly get     date: 'Sun, 06 Nov 2016 12:12:20 GMT',
+248 silly get     via: '1.1 varnish',
+248 silly get     age: '140',
+248 silly get     connection: 'keep-alive',
+248 silly get     'x-served-by': 'cache-hkg6825-HKG',
+248 silly get     'x-cache': 'HIT',
+248 silly get     'x-cache-hits': '2',
+248 silly get     'x-timer': 'S1478434340.428985,VS0,VE0',
+248 silly get     vary: 'Accept-Encoding' } ]
+249 verbose get saving body-parser to /Users/Psylife/.npm/registry.npmjs.org/body-parser/.cache.json
+250 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+251 http 200 https://registry.npmjs.org/express
+252 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+252 verbose headers   etag: '"4T2U6UDNJQFYEPUHB6EPTB8ZE"',
+252 verbose headers   'content-type': 'application/json',
+252 verbose headers   'content-encoding': 'gzip',
+252 verbose headers   'cache-control': 'max-age=300',
+252 verbose headers   'content-length': '56817',
+252 verbose headers   'accept-ranges': 'bytes',
+252 verbose headers   date: 'Sun, 06 Nov 2016 12:12:13 GMT',
+252 verbose headers   via: '1.1 varnish',
+252 verbose headers   age: '180',
+252 verbose headers   connection: 'keep-alive',
+252 verbose headers   'x-served-by': 'cache-hkg6824-HKG',
+252 verbose headers   'x-cache': 'HIT',
+252 verbose headers   'x-cache-hits': '4',
+252 verbose headers   'x-timer': 'S1478434333.541902,VS0,VE0',
+252 verbose headers   vary: 'Accept-Encoding' }
+253 silly get cb [ 200,
+253 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+253 silly get     etag: '"4T2U6UDNJQFYEPUHB6EPTB8ZE"',
+253 silly get     'content-type': 'application/json',
+253 silly get     'content-encoding': 'gzip',
+253 silly get     'cache-control': 'max-age=300',
+253 silly get     'content-length': '56817',
+253 silly get     'accept-ranges': 'bytes',
+253 silly get     date: 'Sun, 06 Nov 2016 12:12:13 GMT',
+253 silly get     via: '1.1 varnish',
+253 silly get     age: '180',
+253 silly get     connection: 'keep-alive',
+253 silly get     'x-served-by': 'cache-hkg6824-HKG',
+253 silly get     'x-cache': 'HIT',
+253 silly get     'x-cache-hits': '4',
+253 silly get     'x-timer': 'S1478434333.541902,VS0,VE0',
+253 silly get     vary: 'Accept-Encoding' } ]
+254 verbose get saving express to /Users/Psylife/.npm/registry.npmjs.org/express/.cache.json
+255 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+256 http 200 https://registry.npmjs.org/async
+257 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+257 verbose headers   etag: '"6I8UE1NO1TX5Q0ZC8W837ST5I"',
+257 verbose headers   'content-type': 'application/json',
+257 verbose headers   'content-encoding': 'gzip',
+257 verbose headers   'cache-control': 'max-age=300',
+257 verbose headers   'content-length': '17947',
+257 verbose headers   'accept-ranges': 'bytes',
+257 verbose headers   date: 'Sun, 06 Nov 2016 12:12:20 GMT',
+257 verbose headers   via: '1.1 varnish',
+257 verbose headers   age: '208',
+257 verbose headers   connection: 'keep-alive',
+257 verbose headers   'x-served-by': 'cache-hkg6826-HKG',
+257 verbose headers   'x-cache': 'HIT',
+257 verbose headers   'x-cache-hits': '6',
+257 verbose headers   'x-timer': 'S1478434340.424948,VS0,VE0',
+257 verbose headers   vary: 'Accept-Encoding' }
+258 silly get cb [ 200,
+258 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+258 silly get     etag: '"6I8UE1NO1TX5Q0ZC8W837ST5I"',
+258 silly get     'content-type': 'application/json',
+258 silly get     'content-encoding': 'gzip',
+258 silly get     'cache-control': 'max-age=300',
+258 silly get     'content-length': '17947',
+258 silly get     'accept-ranges': 'bytes',
+258 silly get     date: 'Sun, 06 Nov 2016 12:12:20 GMT',
+258 silly get     via: '1.1 varnish',
+258 silly get     age: '208',
+258 silly get     connection: 'keep-alive',
+258 silly get     'x-served-by': 'cache-hkg6826-HKG',
+258 silly get     'x-cache': 'HIT',
+258 silly get     'x-cache-hits': '6',
+258 silly get     'x-timer': 'S1478434340.424948,VS0,VE0',
+258 silly get     vary: 'Accept-Encoding' } ]
+259 verbose get saving async to /Users/Psylife/.npm/registry.npmjs.org/async/.cache.json
+260 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+261 info outdated updating [ { dep:
+261 info outdated      Node {
+261 info outdated        id: 62,
+261 info outdated        package: [Object],
+261 info outdated        path: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/express-session',
+261 info outdated        realpath: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/express-session',
+261 info outdated        parent: [Object],
+261 info outdated        isLink: false,
+261 info outdated        children: [Object],
+261 info outdated        error: null,
+261 info outdated        loaded: false,
+261 info outdated        requiredBy: [Object],
+261 info outdated        requires: [Object],
+261 info outdated        missingDeps: {},
+261 info outdated        missingDevDeps: {},
+261 info outdated        phantomChildren: {},
+261 info outdated        location: '/express-session',
+261 info outdated        userRequired: false,
+261 info outdated        existing: false,
+261 info outdated        isTop: false,
+261 info outdated        resolved: [Object] },
+261 info outdated     depname: 'express-session',
+261 info outdated     current: '1.14.1',
+261 info outdated     wanted: '1.14.2',
+261 info outdated     latest: '1.14.2',
+261 info outdated     req: '^1.14.1',
+261 info outdated     what: 'express-session@1.14.2' },
+261 info outdated   { dep:
+261 info outdated      Node {
+261 info outdated        id: 71,
+261 info outdated        package: [Object],
+261 info outdated        path: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/express-validator',
+261 info outdated        realpath: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/express-validator',
+261 info outdated        parent: [Object],
+261 info outdated        isLink: false,
+261 info outdated        children: [Object],
+261 info outdated        error: null,
+261 info outdated        loaded: false,
+261 info outdated        requiredBy: [Object],
+261 info outdated        requires: [Object],
+261 info outdated        missingDeps: {},
+261 info outdated        missingDevDeps: {},
+261 info outdated        phantomChildren: {},
+261 info outdated        location: '/express-validator',
+261 info outdated        userRequired: false,
+261 info outdated        existing: false,
+261 info outdated        isTop: false,
+261 info outdated        resolved: [Object] },
+261 info outdated     depname: 'express-validator',
+261 info outdated     current: '2.20.10',
+261 info outdated     wanted: '2.21.0',
+261 info outdated     latest: '2.21.0',
+261 info outdated     req: '^2.20.10',
+261 info outdated     what: 'express-validator@2.21.0' },
+261 info outdated   { dep:
+261 info outdated      Node {
+261 info outdated        id: 121,
+261 info outdated        package: [Object],
+261 info outdated        path: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/mongoose',
+261 info outdated        realpath: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/mongoose',
+261 info outdated        parent: [Object],
+261 info outdated        isLink: false,
+261 info outdated        children: [Object],
+261 info outdated        error: null,
+261 info outdated        loaded: false,
+261 info outdated        requiredBy: [Object],
+261 info outdated        requires: [Object],
+261 info outdated        missingDeps: {},
+261 info outdated        missingDevDeps: {},
+261 info outdated        phantomChildren: [Object],
+261 info outdated        location: '/mongoose',
+261 info outdated        userRequired: false,
+261 info outdated        existing: false,
+261 info outdated        isTop: false,
+261 info outdated        resolved: [Object] },
+261 info outdated     depname: 'mongoose',
+261 info outdated     current: '4.6.4',
+261 info outdated     wanted: '4.6.6',
+261 info outdated     latest: '4.6.6',
+261 info outdated     req: '^4.6.0',
+261 info outdated     what: 'mongoose@4.6.6' },
+261 info outdated   { dep:
+261 info outdated      Node {
+261 info outdated        id: 131,
+261 info outdated        package: [Object],
+261 info outdated        path: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/mysql',
+261 info outdated        realpath: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/mysql',
+261 info outdated        parent: [Object],
+261 info outdated        isLink: false,
+261 info outdated        children: [Object],
+261 info outdated        error: null,
+261 info outdated        loaded: false,
+261 info outdated        requiredBy: [Object],
+261 info outdated        requires: [Object],
+261 info outdated        missingDeps: {},
+261 info outdated        missingDevDeps: {},
+261 info outdated        phantomChildren: [Object],
+261 info outdated        location: '/mysql',
+261 info outdated        userRequired: false,
+261 info outdated        existing: false,
+261 info outdated        isTop: false,
+261 info outdated        resolved: [Object] },
+261 info outdated     depname: 'mysql',
+261 info outdated     current: '2.11.1',
+261 info outdated     wanted: '2.12.0',
+261 info outdated     latest: '2.12.0',
+261 info outdated     req: '^2.11.1',
+261 info outdated     what: 'mysql@2.12.0' },
+261 info outdated   { dep:
+261 info outdated      Node {
+261 info outdated        id: 149,
+261 info outdated        package: [Object],
+261 info outdated        path: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/request',
+261 info outdated        realpath: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/request',
+261 info outdated        parent: [Object],
+261 info outdated        isLink: false,
+261 info outdated        children: [Object],
+261 info outdated        error: null,
+261 info outdated        loaded: false,
+261 info outdated        requiredBy: [Object],
+261 info outdated        requires: [Object],
+261 info outdated        missingDeps: {},
+261 info outdated        missingDevDeps: {},
+261 info outdated        phantomChildren: {},
+261 info outdated        location: '/request',
+261 info outdated        userRequired: false,
+261 info outdated        existing: false,
+261 info outdated        isTop: false,
+261 info outdated        resolved: [Object] },
+261 info outdated     depname: 'request',
+261 info outdated     current: '2.75.0',
+261 info outdated     wanted: '2.78.0',
+261 info outdated     latest: '2.78.0',
+261 info outdated     req: '^2.74.0',
+261 info outdated     what: 'request@2.78.0' },
+261 info outdated   { dep:
+261 info outdated      Node {
+261 info outdated        id: 165,
+261 info outdated        package: [Object],
+261 info outdated        path: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/supertest',
+261 info outdated        realpath: '/Users/Psylife/Documents/xiaoke/练习项目/Node-Server/node_modules/supertest',
+261 info outdated        parent: [Object],
+261 info outdated        isLink: false,
+261 info outdated        children: [Object],
+261 info outdated        error: null,
+261 info outdated        loaded: false,
+261 info outdated        requiredBy: [Object],
+261 info outdated        requires: [Object],
+261 info outdated        missingDeps: {},
+261 info outdated        missingDevDeps: {},
+261 info outdated        phantomChildren: {},
+261 info outdated        location: '/supertest',
+261 info outdated        userRequired: false,
+261 info outdated        existing: false,
+261 info outdated        isTop: false,
+261 info outdated        resolved: [Object] },
+261 info outdated     depname: 'supertest',
+261 info outdated     current: '2.0.0',
+261 info outdated     wanted: '2.0.1',
+261 info outdated     latest: '2.0.1',
+261 info outdated     req: '^2.0.0',
+261 info outdated     what: 'supertest@2.0.1' } ]
+262 silly loadCurrentTree Starting
+263 silly install loadCurrentTree
+264 silly install readLocalPackageData
+265 silly fetchPackageMetaData express-session@1.14.2
+266 silly fetchPackageMetaData express-validator@2.21.0
+267 silly fetchPackageMetaData mongoose@4.6.6
+268 silly fetchPackageMetaData mysql@2.12.0
+269 silly fetchPackageMetaData request@2.78.0
+270 silly fetchPackageMetaData supertest@2.0.1
+271 silly fetchNamedPackageData express-session
+272 silly mapToRegistry name express-session
+273 silly mapToRegistry using default registry
+274 silly mapToRegistry registry https://registry.npmjs.org/
+275 silly mapToRegistry data Result {
+275 silly mapToRegistry   raw: 'express-session',
+275 silly mapToRegistry   scope: null,
+275 silly mapToRegistry   escapedName: 'express-session',
+275 silly mapToRegistry   name: 'express-session',
+275 silly mapToRegistry   rawSpec: '',
+275 silly mapToRegistry   spec: 'latest',
+275 silly mapToRegistry   type: 'tag' }
+276 silly mapToRegistry uri https://registry.npmjs.org/express-session
+277 silly fetchNamedPackageData express-validator
+278 silly mapToRegistry name express-validator
+279 silly mapToRegistry using default registry
+280 silly mapToRegistry registry https://registry.npmjs.org/
+281 silly mapToRegistry data Result {
+281 silly mapToRegistry   raw: 'express-validator',
+281 silly mapToRegistry   scope: null,
+281 silly mapToRegistry   escapedName: 'express-validator',
+281 silly mapToRegistry   name: 'express-validator',
+281 silly mapToRegistry   rawSpec: '',
+281 silly mapToRegistry   spec: 'latest',
+281 silly mapToRegistry   type: 'tag' }
+282 silly mapToRegistry uri https://registry.npmjs.org/express-validator
+283 silly fetchNamedPackageData mongoose
+284 silly mapToRegistry name mongoose
+285 silly mapToRegistry using default registry
+286 silly mapToRegistry registry https://registry.npmjs.org/
+287 silly mapToRegistry data Result {
+287 silly mapToRegistry   raw: 'mongoose',
+287 silly mapToRegistry   scope: null,
+287 silly mapToRegistry   escapedName: 'mongoose',
+287 silly mapToRegistry   name: 'mongoose',
+287 silly mapToRegistry   rawSpec: '',
+287 silly mapToRegistry   spec: 'latest',
+287 silly mapToRegistry   type: 'tag' }
+288 silly mapToRegistry uri https://registry.npmjs.org/mongoose
+289 silly fetchNamedPackageData mysql
+290 silly mapToRegistry name mysql
+291 silly mapToRegistry using default registry
+292 silly mapToRegistry registry https://registry.npmjs.org/
+293 silly mapToRegistry data Result {
+293 silly mapToRegistry   raw: 'mysql',
+293 silly mapToRegistry   scope: null,
+293 silly mapToRegistry   escapedName: 'mysql',
+293 silly mapToRegistry   name: 'mysql',
+293 silly mapToRegistry   rawSpec: '',
+293 silly mapToRegistry   spec: 'latest',
+293 silly mapToRegistry   type: 'tag' }
+294 silly mapToRegistry uri https://registry.npmjs.org/mysql
+295 silly fetchNamedPackageData request
+296 silly mapToRegistry name request
+297 silly mapToRegistry using default registry
+298 silly mapToRegistry registry https://registry.npmjs.org/
+299 silly mapToRegistry data Result {
+299 silly mapToRegistry   raw: 'request',
+299 silly mapToRegistry   scope: null,
+299 silly mapToRegistry   escapedName: 'request',
+299 silly mapToRegistry   name: 'request',
+299 silly mapToRegistry   rawSpec: '',
+299 silly mapToRegistry   spec: 'latest',
+299 silly mapToRegistry   type: 'tag' }
+300 silly mapToRegistry uri https://registry.npmjs.org/request
+301 silly fetchNamedPackageData supertest
+302 silly mapToRegistry name supertest
+303 silly mapToRegistry using default registry
+304 silly mapToRegistry registry https://registry.npmjs.org/
+305 silly mapToRegistry data Result {
+305 silly mapToRegistry   raw: 'supertest',
+305 silly mapToRegistry   scope: null,
+305 silly mapToRegistry   escapedName: 'supertest',
+305 silly mapToRegistry   name: 'supertest',
+305 silly mapToRegistry   rawSpec: '',
+305 silly mapToRegistry   spec: 'latest',
+305 silly mapToRegistry   type: 'tag' }
+306 silly mapToRegistry uri https://registry.npmjs.org/supertest
+307 verbose request uri https://registry.npmjs.org/express-session
+308 verbose request no auth needed
+309 info attempt registry request try #1 at 20:12:26
+310 verbose etag "A61UCUBOU9Q1LLYF1GWHYJMRD"
+311 http request GET https://registry.npmjs.org/express-session
+312 verbose request uri https://registry.npmjs.org/mysql
+313 verbose request no auth needed
+314 info attempt registry request try #1 at 20:12:26
+315 verbose etag "93AZBJQ6PWI4IRWB06YJB21NX"
+316 http request GET https://registry.npmjs.org/mysql
+317 verbose request uri https://registry.npmjs.org/express-validator
+318 verbose request no auth needed
+319 info attempt registry request try #1 at 20:12:26
+320 verbose etag "A1MHGPZ1I0N143SQP6IYJUSYQ"
+321 http request GET https://registry.npmjs.org/express-validator
+322 verbose request uri https://registry.npmjs.org/mongoose
+323 verbose request no auth needed
+324 info attempt registry request try #1 at 20:12:26
+325 verbose etag "C0A3VW3UAMDEEJ2897WT397J8"
+326 http request GET https://registry.npmjs.org/mongoose
+327 verbose request uri https://registry.npmjs.org/supertest
+328 verbose request no auth needed
+329 info attempt registry request try #1 at 20:12:26
+330 verbose etag "CL2WYNSW66B4FPBYC3BUMY909"
+331 http request GET https://registry.npmjs.org/supertest
+332 verbose get https://registry.npmjs.org/request not expired, no request
+333 http 304 https://registry.npmjs.org/express-session
+334 verbose headers { date: 'Sun, 06 Nov 2016 12:12:27 GMT',
+334 verbose headers   via: '1.1 varnish',
+334 verbose headers   'cache-control': 'max-age=300',
+334 verbose headers   etag: '"A61UCUBOU9Q1LLYF1GWHYJMRD"',
+334 verbose headers   age: '59',
+334 verbose headers   connection: 'keep-alive',
+334 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+334 verbose headers   'x-cache': 'HIT',
+334 verbose headers   'x-cache-hits': '1',
+334 verbose headers   'x-timer': 'S1478434347.020050,VS0,VE0',
+334 verbose headers   vary: 'Accept-Encoding' }
+335 silly get cb [ 304,
+335 silly get   { date: 'Sun, 06 Nov 2016 12:12:27 GMT',
+335 silly get     via: '1.1 varnish',
+335 silly get     'cache-control': 'max-age=300',
+335 silly get     etag: '"A61UCUBOU9Q1LLYF1GWHYJMRD"',
+335 silly get     age: '59',
+335 silly get     connection: 'keep-alive',
+335 silly get     'x-served-by': 'cache-hkg6825-HKG',
+335 silly get     'x-cache': 'HIT',
+335 silly get     'x-cache-hits': '1',
+335 silly get     'x-timer': 'S1478434347.020050,VS0,VE0',
+335 silly get     vary: 'Accept-Encoding' } ]
+336 verbose etag https://registry.npmjs.org/express-session from cache
+337 verbose get saving express-session to /Users/Psylife/.npm/registry.npmjs.org/express-session/.cache.json
+338 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+339 http 304 https://registry.npmjs.org/supertest
+340 verbose headers { date: 'Sun, 06 Nov 2016 12:12:27 GMT',
+340 verbose headers   via: '1.1 varnish',
+340 verbose headers   'cache-control': 'max-age=300',
+340 verbose headers   etag: '"CL2WYNSW66B4FPBYC3BUMY909"',
+340 verbose headers   age: '34',
+340 verbose headers   connection: 'keep-alive',
+340 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+340 verbose headers   'x-cache': 'HIT',
+340 verbose headers   'x-cache-hits': '1',
+340 verbose headers   'x-timer': 'S1478434347.047589,VS0,VE0',
+340 verbose headers   vary: 'Accept-Encoding' }
+341 silly get cb [ 304,
+341 silly get   { date: 'Sun, 06 Nov 2016 12:12:27 GMT',
+341 silly get     via: '1.1 varnish',
+341 silly get     'cache-control': 'max-age=300',
+341 silly get     etag: '"CL2WYNSW66B4FPBYC3BUMY909"',
+341 silly get     age: '34',
+341 silly get     connection: 'keep-alive',
+341 silly get     'x-served-by': 'cache-hkg6825-HKG',
+341 silly get     'x-cache': 'HIT',
+341 silly get     'x-cache-hits': '1',
+341 silly get     'x-timer': 'S1478434347.047589,VS0,VE0',
+341 silly get     vary: 'Accept-Encoding' } ]
+342 verbose etag https://registry.npmjs.org/supertest from cache
+343 verbose get saving supertest to /Users/Psylife/.npm/registry.npmjs.org/supertest/.cache.json
+344 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+345 http 304 https://registry.npmjs.org/express-validator
+346 verbose headers { date: 'Sun, 06 Nov 2016 12:12:27 GMT',
+346 verbose headers   via: '1.1 varnish',
+346 verbose headers   'cache-control': 'max-age=300',
+346 verbose headers   etag: '"A1MHGPZ1I0N143SQP6IYJUSYQ"',
+346 verbose headers   age: '140',
+346 verbose headers   connection: 'keep-alive',
+346 verbose headers   'x-served-by': 'cache-hkg6824-HKG',
+346 verbose headers   'x-cache': 'HIT',
+346 verbose headers   'x-cache-hits': '1',
+346 verbose headers   'x-timer': 'S1478434347.023688,VS0,VE0',
+346 verbose headers   vary: 'Accept-Encoding' }
+347 silly get cb [ 304,
+347 silly get   { date: 'Sun, 06 Nov 2016 12:12:27 GMT',
+347 silly get     via: '1.1 varnish',
+347 silly get     'cache-control': 'max-age=300',
+347 silly get     etag: '"A1MHGPZ1I0N143SQP6IYJUSYQ"',
+347 silly get     age: '140',
+347 silly get     connection: 'keep-alive',
+347 silly get     'x-served-by': 'cache-hkg6824-HKG',
+347 silly get     'x-cache': 'HIT',
+347 silly get     'x-cache-hits': '1',
+347 silly get     'x-timer': 'S1478434347.023688,VS0,VE0',
+347 silly get     vary: 'Accept-Encoding' } ]
+348 verbose etag https://registry.npmjs.org/express-validator from cache
+349 verbose get saving express-validator to /Users/Psylife/.npm/registry.npmjs.org/express-validator/.cache.json
+350 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+351 http 304 https://registry.npmjs.org/mongoose
+352 verbose headers { date: 'Sun, 06 Nov 2016 12:12:27 GMT',
+352 verbose headers   via: '1.1 varnish',
+352 verbose headers   'cache-control': 'max-age=300',
+352 verbose headers   etag: '"C0A3VW3UAMDEEJ2897WT397J8"',
+352 verbose headers   age: '59',
+352 verbose headers   connection: 'keep-alive',
+352 verbose headers   'x-served-by': 'cache-hkg6823-HKG',
+352 verbose headers   'x-cache': 'HIT',
+352 verbose headers   'x-cache-hits': '1',
+352 verbose headers   'x-timer': 'S1478434347.047323,VS0,VE0',
+352 verbose headers   vary: 'Accept-Encoding' }
+353 silly get cb [ 304,
+353 silly get   { date: 'Sun, 06 Nov 2016 12:12:27 GMT',
+353 silly get     via: '1.1 varnish',
+353 silly get     'cache-control': 'max-age=300',
+353 silly get     etag: '"C0A3VW3UAMDEEJ2897WT397J8"',
+353 silly get     age: '59',
+353 silly get     connection: 'keep-alive',
+353 silly get     'x-served-by': 'cache-hkg6823-HKG',
+353 silly get     'x-cache': 'HIT',
+353 silly get     'x-cache-hits': '1',
+353 silly get     'x-timer': 'S1478434347.047323,VS0,VE0',
+353 silly get     vary: 'Accept-Encoding' } ]
+354 verbose etag https://registry.npmjs.org/mongoose from cache
+355 verbose get saving mongoose to /Users/Psylife/.npm/registry.npmjs.org/mongoose/.cache.json
+356 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+357 http 304 https://registry.npmjs.org/mysql
+358 verbose headers { date: 'Sun, 06 Nov 2016 12:12:27 GMT',
+358 verbose headers   via: '1.1 varnish',
+358 verbose headers   'cache-control': 'max-age=300',
+358 verbose headers   etag: '"93AZBJQ6PWI4IRWB06YJB21NX"',
+358 verbose headers   age: '137',
+358 verbose headers   connection: 'keep-alive',
+358 verbose headers   'x-served-by': 'cache-hkg6821-HKG',
+358 verbose headers   'x-cache': 'HIT',
+358 verbose headers   'x-cache-hits': '1',
+358 verbose headers   'x-timer': 'S1478434347.026527,VS0,VE0',
+358 verbose headers   vary: 'Accept-Encoding' }
+359 silly get cb [ 304,
+359 silly get   { date: 'Sun, 06 Nov 2016 12:12:27 GMT',
+359 silly get     via: '1.1 varnish',
+359 silly get     'cache-control': 'max-age=300',
+359 silly get     etag: '"93AZBJQ6PWI4IRWB06YJB21NX"',
+359 silly get     age: '137',
+359 silly get     connection: 'keep-alive',
+359 silly get     'x-served-by': 'cache-hkg6821-HKG',
+359 silly get     'x-cache': 'HIT',
+359 silly get     'x-cache-hits': '1',
+359 silly get     'x-timer': 'S1478434347.026527,VS0,VE0',
+359 silly get     vary: 'Accept-Encoding' } ]
+360 verbose etag https://registry.npmjs.org/mysql from cache
+361 verbose get saving mysql to /Users/Psylife/.npm/registry.npmjs.org/mysql/.cache.json
+362 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+363 silly install normalizeTree
+364 silly loadCurrentTree Finishing
+365 silly loadIdealTree Starting
+366 silly install loadIdealTree
+367 silly cloneCurrentTree Starting
+368 silly install cloneCurrentTreeToIdealTree
+369 silly cloneCurrentTree Finishing
+370 silly loadShrinkwrap Starting
+371 silly install loadShrinkwrap
+372 silly loadShrinkwrap Finishing
+373 silly loadAllDepsIntoIdealTree Starting
+374 silly install loadAllDepsIntoIdealTree
+375 silly resolveWithNewModule request@2.78.0 checking installable status
+376 silly cache add args [ 'request@2.78.0', null ]
+377 verbose cache add spec request@2.78.0
+378 silly resolveWithNewModule express-session@1.14.2 checking installable status
+379 silly cache add args [ 'express-session@1.14.2', null ]
+380 verbose cache add spec express-session@1.14.2
+381 silly resolveWithNewModule supertest@2.0.1 checking installable status
+382 silly cache add args [ 'supertest@2.0.1', null ]
+383 verbose cache add spec supertest@2.0.1
+384 silly resolveWithNewModule express-validator@2.21.0 checking installable status
+385 silly cache add args [ 'express-validator@2.21.0', null ]
+386 verbose cache add spec express-validator@2.21.0
+387 silly resolveWithNewModule mongoose@4.6.6 checking installable status
+388 silly cache add args [ 'mongoose@4.6.6', null ]
+389 verbose cache add spec mongoose@4.6.6
+390 silly resolveWithNewModule mysql@2.12.0 checking installable status
+391 silly cache add args [ 'mysql@2.12.0', null ]
+392 verbose cache add spec mysql@2.12.0
+393 silly cache add parsed spec Result {
+393 silly cache add   raw: 'request@2.78.0',
+393 silly cache add   scope: null,
+393 silly cache add   escapedName: 'request',
+393 silly cache add   name: 'request',
+393 silly cache add   rawSpec: '2.78.0',
+393 silly cache add   spec: '2.78.0',
+393 silly cache add   type: 'version' }
+394 silly addNamed request@2.78.0
+395 verbose addNamed "2.78.0" is a plain semver version for request
+396 silly mapToRegistry name request
+397 silly mapToRegistry using default registry
+398 silly mapToRegistry registry https://registry.npmjs.org/
+399 silly mapToRegistry data Result {
+399 silly mapToRegistry   raw: 'request',
+399 silly mapToRegistry   scope: null,
+399 silly mapToRegistry   escapedName: 'request',
+399 silly mapToRegistry   name: 'request',
+399 silly mapToRegistry   rawSpec: '',
+399 silly mapToRegistry   spec: 'latest',
+399 silly mapToRegistry   type: 'tag' }
+400 silly mapToRegistry uri https://registry.npmjs.org/request
+401 verbose addNameVersion registry:https://registry.npmjs.org/request not in flight; fetching
+402 silly cache add parsed spec Result {
+402 silly cache add   raw: 'express-session@1.14.2',
+402 silly cache add   scope: null,
+402 silly cache add   escapedName: 'express-session',
+402 silly cache add   name: 'express-session',
+402 silly cache add   rawSpec: '1.14.2',
+402 silly cache add   spec: '1.14.2',
+402 silly cache add   type: 'version' }
+403 silly addNamed express-session@1.14.2
+404 verbose addNamed "1.14.2" is a plain semver version for express-session
+405 silly mapToRegistry name express-session
+406 silly mapToRegistry using default registry
+407 silly mapToRegistry registry https://registry.npmjs.org/
+408 silly mapToRegistry data Result {
+408 silly mapToRegistry   raw: 'express-session',
+408 silly mapToRegistry   scope: null,
+408 silly mapToRegistry   escapedName: 'express-session',
+408 silly mapToRegistry   name: 'express-session',
+408 silly mapToRegistry   rawSpec: '',
+408 silly mapToRegistry   spec: 'latest',
+408 silly mapToRegistry   type: 'tag' }
+409 silly mapToRegistry uri https://registry.npmjs.org/express-session
+410 verbose addNameVersion registry:https://registry.npmjs.org/express-session not in flight; fetching
+411 silly cache add parsed spec Result {
+411 silly cache add   raw: 'supertest@2.0.1',
+411 silly cache add   scope: null,
+411 silly cache add   escapedName: 'supertest',
+411 silly cache add   name: 'supertest',
+411 silly cache add   rawSpec: '2.0.1',
+411 silly cache add   spec: '2.0.1',
+411 silly cache add   type: 'version' }
+412 silly addNamed supertest@2.0.1
+413 verbose addNamed "2.0.1" is a plain semver version for supertest
+414 silly mapToRegistry name supertest
+415 silly mapToRegistry using default registry
+416 silly mapToRegistry registry https://registry.npmjs.org/
+417 silly mapToRegistry data Result {
+417 silly mapToRegistry   raw: 'supertest',
+417 silly mapToRegistry   scope: null,
+417 silly mapToRegistry   escapedName: 'supertest',
+417 silly mapToRegistry   name: 'supertest',
+417 silly mapToRegistry   rawSpec: '',
+417 silly mapToRegistry   spec: 'latest',
+417 silly mapToRegistry   type: 'tag' }
+418 silly mapToRegistry uri https://registry.npmjs.org/supertest
+419 verbose addNameVersion registry:https://registry.npmjs.org/supertest not in flight; fetching
+420 silly cache add parsed spec Result {
+420 silly cache add   raw: 'express-validator@2.21.0',
+420 silly cache add   scope: null,
+420 silly cache add   escapedName: 'express-validator',
+420 silly cache add   name: 'express-validator',
+420 silly cache add   rawSpec: '2.21.0',
+420 silly cache add   spec: '2.21.0',
+420 silly cache add   type: 'version' }
+421 silly addNamed express-validator@2.21.0
+422 verbose addNamed "2.21.0" is a plain semver version for express-validator
+423 silly mapToRegistry name express-validator
+424 silly mapToRegistry using default registry
+425 silly mapToRegistry registry https://registry.npmjs.org/
+426 silly mapToRegistry data Result {
+426 silly mapToRegistry   raw: 'express-validator',
+426 silly mapToRegistry   scope: null,
+426 silly mapToRegistry   escapedName: 'express-validator',
+426 silly mapToRegistry   name: 'express-validator',
+426 silly mapToRegistry   rawSpec: '',
+426 silly mapToRegistry   spec: 'latest',
+426 silly mapToRegistry   type: 'tag' }
+427 silly mapToRegistry uri https://registry.npmjs.org/express-validator
+428 verbose addNameVersion registry:https://registry.npmjs.org/express-validator not in flight; fetching
+429 silly cache add parsed spec Result {
+429 silly cache add   raw: 'mongoose@4.6.6',
+429 silly cache add   scope: null,
+429 silly cache add   escapedName: 'mongoose',
+429 silly cache add   name: 'mongoose',
+429 silly cache add   rawSpec: '4.6.6',
+429 silly cache add   spec: '4.6.6',
+429 silly cache add   type: 'version' }
+430 silly addNamed mongoose@4.6.6
+431 verbose addNamed "4.6.6" is a plain semver version for mongoose
+432 silly mapToRegistry name mongoose
+433 silly mapToRegistry using default registry
+434 silly mapToRegistry registry https://registry.npmjs.org/
+435 silly mapToRegistry data Result {
+435 silly mapToRegistry   raw: 'mongoose',
+435 silly mapToRegistry   scope: null,
+435 silly mapToRegistry   escapedName: 'mongoose',
+435 silly mapToRegistry   name: 'mongoose',
+435 silly mapToRegistry   rawSpec: '',
+435 silly mapToRegistry   spec: 'latest',
+435 silly mapToRegistry   type: 'tag' }
+436 silly mapToRegistry uri https://registry.npmjs.org/mongoose
+437 verbose addNameVersion registry:https://registry.npmjs.org/mongoose not in flight; fetching
+438 silly cache add parsed spec Result {
+438 silly cache add   raw: 'mysql@2.12.0',
+438 silly cache add   scope: null,
+438 silly cache add   escapedName: 'mysql',
+438 silly cache add   name: 'mysql',
+438 silly cache add   rawSpec: '2.12.0',
+438 silly cache add   spec: '2.12.0',
+438 silly cache add   type: 'version' }
+439 silly addNamed mysql@2.12.0
+440 verbose addNamed "2.12.0" is a plain semver version for mysql
+441 silly mapToRegistry name mysql
+442 silly mapToRegistry using default registry
+443 silly mapToRegistry registry https://registry.npmjs.org/
+444 silly mapToRegistry data Result {
+444 silly mapToRegistry   raw: 'mysql',
+444 silly mapToRegistry   scope: null,
+444 silly mapToRegistry   escapedName: 'mysql',
+444 silly mapToRegistry   name: 'mysql',
+444 silly mapToRegistry   rawSpec: '',
+444 silly mapToRegistry   spec: 'latest',
+444 silly mapToRegistry   type: 'tag' }
+445 silly mapToRegistry uri https://registry.npmjs.org/mysql
+446 verbose addNameVersion registry:https://registry.npmjs.org/mysql not in flight; fetching
+447 verbose get https://registry.npmjs.org/supertest not expired, no request
+448 verbose get https://registry.npmjs.org/express-session not expired, no request
+449 verbose request uri https://registry.npmjs.org/request
+450 verbose request no auth needed
+451 info attempt registry request try #1 at 20:12:30
+452 verbose etag "BKQENGAPMAD8CILX5VS4XECIZ"
+453 http request GET https://registry.npmjs.org/request
+454 verbose get https://registry.npmjs.org/express-validator not expired, no request
+455 verbose get https://registry.npmjs.org/mysql not expired, no request
+456 silly mapToRegistry name supertest
+457 silly mapToRegistry using default registry
+458 silly mapToRegistry registry https://registry.npmjs.org/
+459 silly mapToRegistry data Result {
+459 silly mapToRegistry   raw: 'supertest',
+459 silly mapToRegistry   scope: null,
+459 silly mapToRegistry   escapedName: 'supertest',
+459 silly mapToRegistry   name: 'supertest',
+459 silly mapToRegistry   rawSpec: '',
+459 silly mapToRegistry   spec: 'latest',
+459 silly mapToRegistry   type: 'tag' }
+460 silly mapToRegistry uri https://registry.npmjs.org/supertest
+461 verbose addRemoteTarball https://registry.npmjs.org/supertest/-/supertest-2.0.1.tgz not in flight; adding
+462 verbose addRemoteTarball [ 'https://registry.npmjs.org/supertest/-/supertest-2.0.1.tgz',
+462 verbose addRemoteTarball   'a058081d788f1515d4700d7502881e6b759e44cd' ]
+463 silly mapToRegistry name express-session
+464 silly mapToRegistry using default registry
+465 silly mapToRegistry registry https://registry.npmjs.org/
+466 silly mapToRegistry data Result {
+466 silly mapToRegistry   raw: 'express-session',
+466 silly mapToRegistry   scope: null,
+466 silly mapToRegistry   escapedName: 'express-session',
+466 silly mapToRegistry   name: 'express-session',
+466 silly mapToRegistry   rawSpec: '',
+466 silly mapToRegistry   spec: 'latest',
+466 silly mapToRegistry   type: 'tag' }
+467 silly mapToRegistry uri https://registry.npmjs.org/express-session
+468 verbose addRemoteTarball https://registry.npmjs.org/express-session/-/express-session-1.14.2.tgz not in flight; adding
+469 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-session/-/express-session-1.14.2.tgz',
+469 verbose addRemoteTarball   '6bcf586ed6d1dc37b02570087756c9de7b80b275' ]
+470 silly mapToRegistry name express-validator
+471 silly mapToRegistry using default registry
+472 silly mapToRegistry registry https://registry.npmjs.org/
+473 silly mapToRegistry data Result {
+473 silly mapToRegistry   raw: 'express-validator',
+473 silly mapToRegistry   scope: null,
+473 silly mapToRegistry   escapedName: 'express-validator',
+473 silly mapToRegistry   name: 'express-validator',
+473 silly mapToRegistry   rawSpec: '',
+473 silly mapToRegistry   spec: 'latest',
+473 silly mapToRegistry   type: 'tag' }
+474 silly mapToRegistry uri https://registry.npmjs.org/express-validator
+475 verbose addRemoteTarball https://registry.npmjs.org/express-validator/-/express-validator-2.21.0.tgz not in flight; adding
+476 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-validator/-/express-validator-2.21.0.tgz',
+476 verbose addRemoteTarball   'f5fc2f9fa9e9a8578634f10e86ba5a4346b96f4f' ]
+477 verbose get https://registry.npmjs.org/mongoose not expired, no request
+478 silly mapToRegistry name mysql
+479 silly mapToRegistry using default registry
+480 silly mapToRegistry registry https://registry.npmjs.org/
+481 silly mapToRegistry data Result {
+481 silly mapToRegistry   raw: 'mysql',
+481 silly mapToRegistry   scope: null,
+481 silly mapToRegistry   escapedName: 'mysql',
+481 silly mapToRegistry   name: 'mysql',
+481 silly mapToRegistry   rawSpec: '',
+481 silly mapToRegistry   spec: 'latest',
+481 silly mapToRegistry   type: 'tag' }
+482 silly mapToRegistry uri https://registry.npmjs.org/mysql
+483 verbose addRemoteTarball https://registry.npmjs.org/mysql/-/mysql-2.12.0.tgz not in flight; adding
+484 verbose addRemoteTarball [ 'https://registry.npmjs.org/mysql/-/mysql-2.12.0.tgz',
+484 verbose addRemoteTarball   '18f7af74555f3f55b7c33d67fc2ca48ccd490e4d' ]
+485 silly mapToRegistry name mongoose
+486 silly mapToRegistry using default registry
+487 silly mapToRegistry registry https://registry.npmjs.org/
+488 silly mapToRegistry data Result {
+488 silly mapToRegistry   raw: 'mongoose',
+488 silly mapToRegistry   scope: null,
+488 silly mapToRegistry   escapedName: 'mongoose',
+488 silly mapToRegistry   name: 'mongoose',
+488 silly mapToRegistry   rawSpec: '',
+488 silly mapToRegistry   spec: 'latest',
+488 silly mapToRegistry   type: 'tag' }
+489 silly mapToRegistry uri https://registry.npmjs.org/mongoose
+490 verbose addRemoteTarball https://registry.npmjs.org/mongoose/-/mongoose-4.6.6.tgz not in flight; adding
+491 verbose addRemoteTarball [ 'https://registry.npmjs.org/mongoose/-/mongoose-4.6.6.tgz',
+491 verbose addRemoteTarball   '62817b63804dcefd2e5c6f7e6a9bb68e30811968' ]
+492 info retry fetch attempt 1 at 20:12:30
+493 info attempt registry request try #1 at 20:12:30
+494 http fetch GET https://registry.npmjs.org/mongoose/-/mongoose-4.6.6.tgz
+495 info retry fetch attempt 1 at 20:12:30
+496 info attempt registry request try #1 at 20:12:30
+497 http fetch GET https://registry.npmjs.org/supertest/-/supertest-2.0.1.tgz
+498 info retry fetch attempt 1 at 20:12:30
+499 info attempt registry request try #1 at 20:12:30
+500 http fetch GET https://registry.npmjs.org/express-validator/-/express-validator-2.21.0.tgz
+501 info retry fetch attempt 1 at 20:12:30
+502 info attempt registry request try #1 at 20:12:30
+503 http fetch GET https://registry.npmjs.org/mysql/-/mysql-2.12.0.tgz
+504 info retry fetch attempt 1 at 20:12:30
+505 info attempt registry request try #1 at 20:12:30
+506 http fetch GET https://registry.npmjs.org/express-session/-/express-session-1.14.2.tgz
+507 http 304 https://registry.npmjs.org/request
+508 verbose headers { date: 'Sun, 06 Nov 2016 12:12:30 GMT',
+508 verbose headers   via: '1.1 varnish',
+508 verbose headers   'cache-control': 'max-age=300',
+508 verbose headers   etag: '"BKQENGAPMAD8CILX5VS4XECIZ"',
+508 verbose headers   age: '60',
+508 verbose headers   connection: 'keep-alive',
+508 verbose headers   'x-served-by': 'cache-hkg6824-HKG',
+508 verbose headers   'x-cache': 'HIT',
+508 verbose headers   'x-cache-hits': '6',
+508 verbose headers   'x-timer': 'S1478434350.729553,VS0,VE0',
+508 verbose headers   vary: 'Accept-Encoding' }
+509 silly get cb [ 304,
+509 silly get   { date: 'Sun, 06 Nov 2016 12:12:30 GMT',
+509 silly get     via: '1.1 varnish',
+509 silly get     'cache-control': 'max-age=300',
+509 silly get     etag: '"BKQENGAPMAD8CILX5VS4XECIZ"',
+509 silly get     age: '60',
+509 silly get     connection: 'keep-alive',
+509 silly get     'x-served-by': 'cache-hkg6824-HKG',
+509 silly get     'x-cache': 'HIT',
+509 silly get     'x-cache-hits': '6',
+509 silly get     'x-timer': 'S1478434350.729553,VS0,VE0',
+509 silly get     vary: 'Accept-Encoding' } ]
+510 verbose etag https://registry.npmjs.org/request from cache
+511 verbose get saving request to /Users/Psylife/.npm/registry.npmjs.org/request/.cache.json
+512 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+513 http fetch 200 https://registry.npmjs.org/express-validator/-/express-validator-2.21.0.tgz
+514 http fetch 200 https://registry.npmjs.org/express-session/-/express-session-1.14.2.tgz
+515 http fetch 200 https://registry.npmjs.org/supertest/-/supertest-2.0.1.tgz
+516 http fetch 200 https://registry.npmjs.org/mongoose/-/mongoose-4.6.6.tgz
+517 silly cache afterAdd request@2.78.0
+518 verbose afterAdd /Users/Psylife/.npm/request/2.78.0/package/package.json not in flight; writing
+519 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+520 verbose afterAdd /Users/Psylife/.npm/request/2.78.0/package/package.json written
+521 silly fetchAndShaCheck shasum 6bcf586ed6d1dc37b02570087756c9de7b80b275
+522 verbose addTmpTarball /var/folders/dc/3cllj9zn2rn_60x83x82sbsm0000gn/T/npm-5212-1b81ad3f/registry.npmjs.org/express-session/-/express-session-1.14.2.tgz not in flight; adding
+523 verbose addTmpTarball already have metadata; skipping unpack for express-session@1.14.2
+524 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+525 silly cache afterAdd express-session@1.14.2
+526 verbose afterAdd /Users/Psylife/.npm/express-session/1.14.2/package/package.json not in flight; writing
+527 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+528 silly fetchAndShaCheck shasum f5fc2f9fa9e9a8578634f10e86ba5a4346b96f4f
+529 verbose addTmpTarball /var/folders/dc/3cllj9zn2rn_60x83x82sbsm0000gn/T/npm-5212-1b81ad3f/registry.npmjs.org/express-validator/-/express-validator-2.21.0.tgz not in flight; adding
+530 verbose addTmpTarball already have metadata; skipping unpack for express-validator@2.21.0
+531 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+532 verbose afterAdd /Users/Psylife/.npm/express-session/1.14.2/package/package.json written
+533 silly cache afterAdd express-validator@2.21.0
+534 verbose afterAdd /Users/Psylife/.npm/express-validator/2.21.0/package/package.json not in flight; writing
+535 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+536 verbose afterAdd /Users/Psylife/.npm/express-validator/2.21.0/package/package.json written
+537 http fetch 200 https://registry.npmjs.org/mysql/-/mysql-2.12.0.tgz
+538 silly fetchAndShaCheck shasum 18f7af74555f3f55b7c33d67fc2ca48ccd490e4d
+539 verbose addTmpTarball /var/folders/dc/3cllj9zn2rn_60x83x82sbsm0000gn/T/npm-5212-1b81ad3f/registry.npmjs.org/mysql/-/mysql-2.12.0.tgz not in flight; adding
+540 verbose addTmpTarball already have metadata; skipping unpack for mysql@2.12.0
+541 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+542 silly cache afterAdd mysql@2.12.0
+543 verbose afterAdd /Users/Psylife/.npm/mysql/2.12.0/package/package.json not in flight; writing
+544 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+545 verbose afterAdd /Users/Psylife/.npm/mysql/2.12.0/package/package.json written
+546 silly fetchAndShaCheck shasum a058081d788f1515d4700d7502881e6b759e44cd
+547 verbose addTmpTarball /var/folders/dc/3cllj9zn2rn_60x83x82sbsm0000gn/T/npm-5212-1b81ad3f/registry.npmjs.org/supertest/-/supertest-2.0.1.tgz not in flight; adding
+548 verbose addTmpTarball already have metadata; skipping unpack for supertest@2.0.1
+549 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+550 silly cache afterAdd supertest@2.0.1
+551 verbose afterAdd /Users/Psylife/.npm/supertest/2.0.1/package/package.json not in flight; writing
+552 verbose correctMkdir /Users/Psylife/.npm correctMkdir not in flight; initializing
+553 verbose afterAdd /Users/Psylife/.npm/supertest/2.0.1/package/package.json written
+554 info retry will retry, error on last attempt: Error: read ETIMEDOUT
+555 silly fetchAndShaCheck shasum 62817b63804dcefd2e5c6f7e6a9bb68e30811968
+556 silly rollbackFailedOptional Starting
+557 silly rollbackFailedOptional Finishing
+558 silly runTopLevelLifecycles Finishing
+559 silly install printInstalled
+560 verbose stack Error: shasum check failed for /var/folders/dc/3cllj9zn2rn_60x83x82sbsm0000gn/T/npm-5212-1b81ad3f/registry.npmjs.org/mongoose/-/mongoose-4.6.6.tgz
+560 verbose stack Expected: 62817b63804dcefd2e5c6f7e6a9bb68e30811968
+560 verbose stack Actual:   227704ce96f80a13d08a293f69e8527bcab0cfc9
+560 verbose stack From:     https://registry.npmjs.org/mongoose/-/mongoose-4.6.6.tgz
+560 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/sha/index.js:25:8
+560 verbose stack     at ReadStream.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/sha/index.js:72:7)
+560 verbose stack     at emitNone (events.js:91:20)
+560 verbose stack     at ReadStream.emit (events.js:185:7)
+560 verbose stack     at endReadableNT (_stream_readable.js:974:12)
+560 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:74:11)
+560 verbose stack     at process._tickCallback (internal/process/next_tick.js:98:9)
+561 verbose cwd /Users/Psylife/Documents/xiaoke/练习项目/Node-Server/config/dump
+562 error Darwin 15.6.0
+563 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "update"
+564 error node v6.8.0
+565 error npm  v3.10.8
+566 error shasum check failed for /var/folders/dc/3cllj9zn2rn_60x83x82sbsm0000gn/T/npm-5212-1b81ad3f/registry.npmjs.org/mongoose/-/mongoose-4.6.6.tgz
+566 error Expected: 62817b63804dcefd2e5c6f7e6a9bb68e30811968
+566 error Actual:   227704ce96f80a13d08a293f69e8527bcab0cfc9
+566 error From:     https://registry.npmjs.org/mongoose/-/mongoose-4.6.6.tgz
+567 error If you need help, you may report this error at:
+567 error     <https://github.com/npm/npm/issues>
+568 verbose exit [ 1, true ]

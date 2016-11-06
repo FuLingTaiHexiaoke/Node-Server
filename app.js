@@ -1,12 +1,12 @@
 /**
  * Module dependencies.
  */
- const express = require('express');
- const session = require('express-session');
- const bodyParser = require('body-parser');
- const errorHandler = require('errorhandler');
- const path = require('path');
- const chalk = require('chalk');
+const express = require('express');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const errorHandler = require('errorhandler');
+const path = require('path');
+const chalk = require('chalk');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const expressValidator = require('express-validator');
@@ -56,7 +56,7 @@ app.use(session({
   saveUninitialized: true,
   secret: '123',
   store: new MongoStore({
-    url:'mongodb://localhost:27017/FuLingOnlineLearningDB',
+    url: 'mongodb://localhost:27017/FuLingOnlineLearningDB',
     autoReconnect: true
   })
 }));
@@ -88,7 +88,7 @@ app.get('/', homeController.index);
  * API examples routes.
  */
 app.get('/api/getAdimg', apiController.getAdimg);
-
+app.get('/api/save', apiController.save);
 
 /**
  * Error Handler.

@@ -1,15 +1,19 @@
 var express = require('express');
+const multer = require('multer');
+const upload = multer();
+
 var router = express.Router();
 const PublishNewsModel = require('../models/PublishNewsModel');
 /* GET home page. */
 router.get('/PublishNewsModel', function (req, res, next) {
-  advertisementImage.find(function (err, docs) {
-    if (err) return next(err);
-    res.send(docs);
-  });
+  // advertisementImage.find(function (err, docs) {
+  //   if (err) return next(err);
+  //   res.send(docs);
+  // });
+     res.send("Hello!");
 });
 
-router.post('/PublishNewsModel', function (req, res, next) {
+router.post('/PublishNewsModel',  upload.array('uploadImage'),function (req, res, next) {
 
   const errors = req.validationErrors();
 
@@ -17,6 +21,11 @@ router.post('/PublishNewsModel', function (req, res, next) {
     req.flash('errors', errors);
     // return res.redirect('/');
   }
+
+    /**
+     *  拦截上传的文件，并保存
+     */
+var files=req.files;
 
   const publishNewsModel = new PublishNewsModel({
     /**

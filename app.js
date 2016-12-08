@@ -2,6 +2,9 @@
  * Module dependencies.
  */
 const express = require('express');
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
 const compression = require('compression');
 const session = require('express-session');
 const bodyParser = require('body-parser');
@@ -20,11 +23,12 @@ const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
 const multer = require('multer');
 
-const upload = multer({ dest: path.join(__dirname, 'uploads') });
+const upload = multer({ dest: path.join(__dirname, 'public/uploads') });
 
 /**
  * router controllers. 
  */
+var launch = require('./controllers/index');
 var launch = require('./controllers/launch');
 var publishNewsController = require('./controllers/PublishNewsController');
 
@@ -122,6 +126,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 /**
  * Primary app routes.
  */
+app.use('/index', launch);//初始化时的页面
 app.use('/launch', launch);//初始化时的页面
 app.use('/publishNewsController', publishNewsController);
 
@@ -134,9 +139,23 @@ app.use(errorHandler());
 /**
  * Start Express server.
  */
-app.listen(app.get('port'), () => {
-  console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env')); 
-  // console.log('  Press CTRL-C to stop\n');
+// app.listen(app.get('port'), () => {
+//   console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env')); 
+//   // console.log('  Press CTRL-C to stop\n');
+// });
+
+var certificate = fs.readFileSync('./OpenSSL/certificate.pfx');
+var credentials = {pfx: certificate,passphrase:"xiaoke"};
+
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(process.env.HTTP_LISTEN_PORT, function() {
+    console.log('%s HTTP Server is running on: http://localhost:%s', chalk.green('✓'), process.env.HTTP_LISTEN_PORT);
+});
+httpsServer.listen(process.env.HTTPS_LISTEN_PORT, function() {
+   console.log('%s HTTPS Server is running on: https://localhost:%s', chalk.green('✓'), process.env.HTTPS_LISTEN_PORT);
 });
 
+module.exports = upload;
 module.exports = app;

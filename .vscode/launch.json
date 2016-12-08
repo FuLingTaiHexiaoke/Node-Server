@@ -15,7 +15,7 @@
             "type": "node",
             "request": "attach",
             "name": "附加到进程",
-            "port": 5858
+            "port": 3000
         }
     ]
 }

@@ -1,6 +1,19 @@
 var express = require('express');
-const multer = require('multer');
-const upload = multer();
+var fs = require('fs')
+var path = require('path')
+var multer = require('multer')
+
+var storage = multer.diskStorage({
+  destination: path.resolve('public/uploads'),
+  filename: function (req, file, cb) {
+    var fileFormat = (file.originalname).split(".");
+    cb(null, file.fieldname + '-' + new Date().toLocaleString() + Date.now() + "." + fileFormat[fileFormat.length - 1]);
+  }
+})
+
+var upload = multer({ storage: storage })
+
+
 
 var router = express.Router();
 const PublishNewsModel = require('../models/PublishNewsModel');
@@ -10,10 +23,10 @@ router.get('/PublishNewsModel', function (req, res, next) {
   //   if (err) return next(err);
   //   res.send(docs);
   // });
-     res.send("Hello!");
+  res.send("Hello!");
 });
 
-router.post('/PublishNewsModel',  upload.array('uploadImage'),function (req, res, next) {
+router.post('/PublishNewsModel', upload.array('uploadImage'), function (req, res, next) {
 
   const errors = req.validationErrors();
 
@@ -21,13 +34,39 @@ router.post('/PublishNewsModel',  upload.array('uploadImage'),function (req, res
     req.flash('errors', errors);
     // return res.redirect('/');
   }
+  const publishNewsModel = getPublishNewsModel(req);
 
-    /**
-     *  拦截上传的文件，并保存
-     */
-var files=req.files;
+  PublishNewsModel.findOne({ _id: req.body.id }, (err, existingUser) => {
+    if (err) { return next(err); }
+    if (existingUser) {
+      req.flash('errors', { msg: 'PublishNewsModel with that id  already exists.' });
+      return res.redirect('/');
+    }
+    publishNewsModel.save((err) => {
+      if (err) {
+        res.send({ state: 1 });
+        return next(err);
+      }
+      // res.send({ state: 0 });
+      // PublishNewsModel.find(err, docs => {
+      //   console.log(docs);
+      //   res.send(docs);
+      // });
 
-  const publishNewsModel = new PublishNewsModel({
+      PublishNewsModel.find({}, function (err, docs) {
+        console.log(docs);
+        res.send(docs);
+      });
+
+
+    });
+  });
+
+});
+
+//实例化model
+var getPublishNewsModel = function (req) {
+  return new PublishNewsModel({
     /**
      *  基本信息区分
      */
@@ -100,22 +139,6 @@ var files=req.files;
     commentid: req.body.commentid
 
   });
-
-  PublishNewsModel.findOne({ _id: req.body.id }, (err, existingUser) => {
-    if (err) { return next(err); }
-    if (existingUser) {
-      req.flash('errors', { msg: 'PublishNewsModel with that id  already exists.' });
-      return res.redirect('/');
-    }
-    publishNewsModel.save((err) => {
-      if (err) {
-        res.send({ state: 1 });
-        return next(err);
-      }
-      res.send({ state: 0 });
-    });
-  });
-
-});
+}
 
 module.exports = router;

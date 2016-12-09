@@ -21,9 +21,8 @@ const passport = require('passport');
 const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
-const multer = require('multer');
-
-const upload = multer({ dest: path.join(__dirname, 'public/uploads') });
+// const multer = require('multer');
+// const upload = multer({ dest:'./public/uploads' });
 
 /**
  * router controllers. 
@@ -95,7 +94,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use((req, res, next) => {
-  if (req.path === '/api/upload') {
+  // if (req.path === '/api/upload') {
+  if (req.path === '/publishNewsController/PublishNewsModel') {
+
     next();
   } else {
     lusca.csrf()(req, res, next);
@@ -110,13 +111,13 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   // After successful login, redirect back to the intended page
   if (!req.user &&
-      req.path !== '/login' &&
-      req.path !== '/signup' &&
-      !req.path.match(/^\/auth/) &&
-      !req.path.match(/\./)) {
+    req.path !== '/login' &&
+    req.path !== '/signup' &&
+    !req.path.match(/^\/auth/) &&
+    !req.path.match(/\./)) {
     req.session.returnTo = req.path;
   } else if (req.user &&
-      req.path == '/account') {
+    req.path == '/account') {
     req.session.returnTo = req.path;
   }
   next();
@@ -129,6 +130,25 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 app.use('/index', launch);//初始化时的页面
 app.use('/launch', launch);//初始化时的页面
 app.use('/publishNewsController', publishNewsController);
+
+// app.post('/publishNewsController/PublishNewsModel', upload.array('uploadImage'), function (req, res) {
+//    console.log(req.files[0]);  // 上传的文件信息
+//    var des_file = __dirname + "/" + req.files[0].originalname;
+//    fs.readFile( req.files[0].path, function (err, data) {
+//         fs.writeFile(des_file, data, function (err) {
+//          if( err ){
+//               console.log( err );
+//          }else{
+//                response = {
+//                    message:'File uploaded successfully', 
+//                    filename:req.files[0].originalname
+//               };
+//           }
+//           console.log( response );
+//           res.end( JSON.stringify( response ) );
+//        });
+//    });
+// })
 
 
 /**
@@ -146,7 +166,7 @@ app.use(errorHandler());
 
 var certificate = fs.readFileSync('./OpenSSL/certificate.pfx');
 var credentials = {pfx: certificate,passphrase:"xiaoke"};
-
+    
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
@@ -155,7 +175,9 @@ httpServer.listen(process.env.HTTP_LISTEN_PORT, function() {
 });
 httpsServer.listen(process.env.HTTPS_LISTEN_PORT, function() {
    console.log('%s HTTPS Server is running on: https://localhost:%s', chalk.green('✓'), process.env.HTTPS_LISTEN_PORT);
-});
+}); 
 
-module.exports = upload;
 module.exports = app;
+
+// exports.upload = upload;
+// exports.app = app; 

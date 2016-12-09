@@ -77,7 +77,9 @@ const  m_resource_collection_= new mongoose.Schema({
  votecount: { type: Number },
  commentid: { type: String }
 
-});
+},
+ { versionKey: false }
+);
 const publishNewsModel = mongoose.model('b_resource_collection' , m_resource_collection_);
 
 module.exports = publishNewsModel;

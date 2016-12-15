@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = require('../app.js');
-
+      //  "start": "pm2 start app.js --watch --ignore-watch=['.git','public','./public/uploads','node_modules']  ",
 describe('GET /', () => {
   it('should return 200 OK', (done) => {
     request(app)

@@ -1,45 +1,46 @@
 
+const bcrypt = require('bcrypt-nodejs');
+const crypto = require('crypto');
 const mongoose = require('mongoose');
-// mongoose.Promise = require('bluebird');
+mongoose.Promise = require('bluebird');
 
 
 const  m_resource_collection_= new mongoose.Schema({
 /**
  *  基本信息区分
  */
- uid: { type: String },
+ _id: { type: Number },
  type_id: { type: Number  },
  type_name: { type: String },
  sub_type_id: { type: Number  },
- sub_type_name: { type: String ,default:''},
+ sub_type_name: { type: String },
 
 /**
  *  发布时间
  */
- ptime: { type: Date },
+ ptime: { type: String },
 
 /**
  *  标题
  */
- title: { type: String  ,default:''},
+ title: { type: String },
 
-/**
+   /**
  *  具体描述
  */
- subtitle: { type: String  ,default:''},
- detail_url: { type: String  ,default:''},
+ subtitle: { type: String },
+ detail_url: { type: String },
 
 /**
  *  新闻
  */
- doc_id: { type: String  ,default:''},
- is_topic: { type: String  ,default:''},
- doc_content: { type: String  ,default:''},
- doc_url: { type: String ,default:'' },
+ doc_id: { type: String },
+ is_topic: { type: String },
+ doc_url: { type: String },
  has_image: { type: Number },
  has_head: { type: Number },
  has_video: { type: Number },
- video_id: { type: String ,default:'' },
+ video_id: { type: String },
  hasAD: { type: Number },
  priority: { type: Number },
 
@@ -52,29 +53,29 @@ const  m_resource_collection_= new mongoose.Schema({
 /**
  *  图片链接
  */
- image_url: { type: String  ,default:''},
- head_url: { type: String  ,default:''},
- image_urls: { type: String  ,default:''},
- order: { type: Number },
+ image_url: { type: String },
+ head_url: { type: String },
+ image_urls: { type: String },
+ order: { type: String },
 
 /**
  *  视频链接
  */
- video_url: { type: String ,default:'' },
+ video_url: { type: String },
 
 
 /**
  *  作者
  */
- editor: { type: String  ,default:''},
+ editor: { type: String },
 
 
 /**
  *  跟帖人数
  */
  replyCount: { type: Number },
- thumbsupCount: { type: Number },
- commentid: { type: String  ,default:''}
+ votecount: { type: Number },
+ commentid: { type: String }
 
 },
  { versionKey: false }

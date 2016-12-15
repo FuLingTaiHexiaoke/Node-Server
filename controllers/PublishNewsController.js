@@ -1,8 +1,8 @@
 var express = require('express');
-var fs = require('fs')
+
+//file upload utilities
 var path = require('path')
 var multer = require('multer')
-
 var storage = multer.diskStorage({
   destination: path.resolve('public/uploads'),
   filename: function (req, file, cb) {
@@ -10,22 +10,82 @@ var storage = multer.diskStorage({
     cb(null, file.fieldname + '-' + new Date().toLocaleString() + Date.now() + "." + fileFormat[fileFormat.length - 1]);
   }
 })
-
 var upload = multer({ storage: storage })
 
+//models
+const PublishNewsModel = require('../models/PublishNewsModel');
+const PublishNewsRelatedAccusation = require('../models/PublishNewsRelatedAccusation');
+const PublishNewsRelatedComments = require('../models/PublishNewsRelatedComments');
+const PublishNewsRelatedCommentsReply = require('../models/PublishNewsRelatedCommentsReply');
+const PublishNewsRelatedPictures = require('../models/PublishNewsRelatedPictures');
+const PublishNewsRelatedThumberup = require('../models/PublishNewsRelatedThumberup');
 
 
 var router = express.Router();
-const PublishNewsModel = require('../models/PublishNewsModel');
-/* GET home page. */
-router.get('/PublishNewsModel', function (req, res, next) {
-  // advertisementImage.find(function (err, docs) {
-  //   if (err) return next(err);
+
+/* 分段请求所有发布的信息 */
+router.get('/PublishNewsModel/:page', function (req, res, next) {
+  // PublishNewsModel.find({},(err,docs)=>{
   //   res.send(docs);
-  // });
-  res.send("Hello!");
+  // })
+
+  var pageSize = 15;                   //一页多少条
+  var currentPage = req.params.page;                //当前第几页
+  var sort = { 'ptime': -1 };            //排序（按发布时间倒序）
+  var condition = {};                 //条件
+  var skipnum = (currentPage - 1) * pageSize;   //跳过数
+
+  // PublishNewsModel.find(condition).skip(skipnum).limit(pageSize).sort(sort).exec(function (err, docs) {
+  //   if (err) {
+  //     console.log("Error:" + err);
+  //   }
+  //   else {
+  //     // console.log("docs:" + docs);
+  //     // res.send(docs);
+  //     // docs.forEach(function (doc) {
+  //     //   PublishNewsRelatedPictures.find({ newsID: doc.uid }, (err, existingPictures) => {
+  //     //     // console.log(existingPictures)
+  //     //     doc.image_urls =JSON.stringify(existingPictures) ;
+  //     //     // doc.image_urls='111';
+  //     //     //  console.log( doc.image_urls)
+  //     //   });
+  //     // }, this);
+  //     docs.map(function (doc) {
+  //       PublishNewsRelatedPictures.find({ newsID: doc.uid }, (err, existingPictures) => {
+  //         doc.image_urls = JSON.stringify(existingPictures);
+  //       });
+  //     }, this);
+
+  //     // res.send(docs);
+  //   // return docs;
+  //   }
+  // }).then(function (docs) {
+  //   res.send(docs);
+  // })
+
+  PublishNewsModel.find(condition).skip(skipnum).limit(pageSize).sort(sort).exec(function (err, docs) {
+    if (err) {
+      console.log("Error:" + err);
+    }
+    else {
+      var current = Promise.resolve();
+      Promise.all(docs.map(function (doc) {
+        current = current.then(function () {
+          return PublishNewsRelatedPictures.find({ newsID: doc.uid })// returns promise
+        }).then(function (result) {
+          doc.image_urls = JSON.stringify(result);
+          return doc
+        });
+        return current;
+      })).then(function (results) {
+        res.send(results);
+      })
+    }
+  });
+
 });
 
+/* 添加发布信息  */
 router.post('/PublishNewsModel', upload.array('uploadImage'), function (req, res, next) {
 
   const errors = req.validationErrors();
@@ -34,9 +94,10 @@ router.post('/PublishNewsModel', upload.array('uploadImage'), function (req, res
     req.flash('errors', errors);
     // return res.redirect('/');
   }
-  const publishNewsModel = getPublishNewsModel(req);
-
-  PublishNewsModel.findOne({ _id: req.body.id }, (err, existingUser) => {
+  //save publishNewsModel 主体信息
+  var newID = guid()
+  const publishNewsModel = getPublishNewsModel(req, newID);
+  PublishNewsModel.findOne({ uid: req.body.id }, (err, existingUser) => {
     if (err) { return next(err); }
     if (existingUser) {
       req.flash('errors', { msg: 'PublishNewsModel with that id  already exists.' });
@@ -44,33 +105,218 @@ router.post('/PublishNewsModel', upload.array('uploadImage'), function (req, res
     }
     publishNewsModel.save((err) => {
       if (err) {
-        res.send({ state: 1 });
+        console.log(err)
         return next(err);
       }
-      // res.send({ state: 0 });
-      // PublishNewsModel.find(err, docs => {
-      //   console.log(docs);
-      //   res.send(docs);
-      // });
-
-      PublishNewsModel.find({}, function (err, docs) {
-        console.log(docs);
-        res.send(docs);
-      });
-
-
     });
   });
 
+  //save publishNewsModel 主体关联的图片信息
+  const publishNewsRelatedPictures = getPublishNewsRelatedPictures(req, newID);
+  publishNewsRelatedPictures.forEach(function (element) {
+    element.save((err) => {
+      if (err) {
+        console.log(err)
+        return next(err);
+      }
+    });
+  }, this);
+  res.send({ state: 0 })
 });
 
+/* 删除发布信息  */
+router.delete('/PublishNewsModel', function (req, res, next) {
+  const errors = req.validationErrors();
+  if (errors) {
+    req.flash('errors', errors);
+    // return res.redirect('/');
+  }
+  // 主体信息
+  PublishNewsModel.remove({ uid: req.body.newsID }, (err, DBRes) => {
+    if (err) {
+      return res.send({ success: 1, data: err });
+    }
+    // else {
+    //   return res.send({ success: 0, data: DBRes });
+    // }
+  })
+    .then(function () {
+      PublishNewsRelatedPictures.remove({ newsID: req.body.newsID }, (err, DBRes) => {
+        if (err) {
+          return res.send({ success: 1, data: err });
+        }
+      });
+    })
+    .then(function () {
+      PublishNewsRelatedComments.remove({ newsID: req.body.newsID }, (err, DBRes) => {
+        if (err) {
+          return res.send({ success: 1, data: err });
+        }
+      });
+    })
+    .then(function () {
+      PublishNewsRelatedCommentsReply.remove({ newsID: req.body.newsID }, (err, DBRes) => {
+        if (err) {
+          return res.send({ success: 1, data: err });
+        }
+      });
+    })
+    .then(function () {
+      PublishNewsRelatedThumberup.remove({ newsID: req.body.newsID }, (err, DBRes) => {
+        if (err) {
+          return res.send({ success: 1, data: err });
+        }
+      });
+    })
+    .then(function () {
+      PublishNewsRelatedAccusation.remove({ newsID: req.body.newsID }, (err, DBRes) => {
+        if (err) {
+          return res.send({ success: 1, data: err });
+        }
+      });
+    })
+    .then(function () {
+      return res.send({ success: 0, data: null });
+    })
+    ;
+
+});
+
+/* 添加点赞数量和点赞人 */
+router.post('/PublishNewsModel/addThumberup', function (req, res, next) {
+  //请求检测
+  const errors = req.validationErrors();
+  if (errors) {
+    req.flash('errors', errors);
+    return res.send({ state: 1, data: errors })
+  }
+  else {
+    // 主体信息
+    var publishNewsRelatedThumberup = new PublishNewsRelatedThumberup({
+      uid: guid(),
+      thumberupUserID: req.body.thumberupUserID,
+      thumberupTimestamp: new Date().toLocaleString(),
+      newsID: req.body.newsID
+    })
+
+    //保存主体信息
+    publishNewsRelatedThumberup.save((err) => {
+      if (err) {
+        console.log(err)
+        return res.send({ state: 1, data: err })
+      }
+      else {
+        return res.send({ state: 0 })
+      }
+    });
+  }
+
+});
+
+/* 添加跟帖评论信息和跟帖评论人信息 */
+router.post('/PublishNewsModel/addComments', function (req, res, next) {
+  //请求检测
+  const errors = req.validationErrors();
+  if (errors) {
+    req.flash('errors', errors);
+    return res.send({ state: 1, data: errors })
+  }
+  else {
+    // 主体信息
+    var publishNewsRelatedComments = new PublishNewsRelatedComments({
+      uid: guid(),
+      commentUserID: req.body.commentUserID,
+      CommentContent: req.body.CommentContent,
+      commentTimestamp: new Date().toLocaleString(),
+      newsID: req.body.newsID
+    })
+
+    //保存主体信息
+    publishNewsRelatedComments.save((err) => {
+      if (err) {
+        console.log(err)
+        return res.send({ state: 1, data: err })
+      }
+      else {
+        return res.send({ state: 0 })
+      }
+    });
+  }
+});
+
+/* 添加回复跟帖评论信息 */
+router.post('/PublishNewsModel/addCommentsReply', function (req, res, next) {
+  //请求检测
+  const errors = req.validationErrors();
+  if (errors) {
+    req.flash('errors', errors);
+    return res.send({ state: 1, data: errors })
+  }
+  else {
+    // 主体信息
+    var publishNewsRelatedCommentsReply = new PublishNewsRelatedCommentsReply({
+      uid: guid(),
+      commentID: req.body.commentUserID,
+      replyContent: req.body.replyContent,
+      replyTimestamp: new Date().toLocaleString(),
+      newsID: req.body.newsID
+    })
+
+    //保存主体信息
+    publishNewsRelatedCommentsReply.save((err) => {
+      if (err) {
+        console.log(err)
+        return res.send({ state: 1, data: err })
+      }
+      else {
+        return res.send({ state: 0 })
+      }
+    });
+  }
+});
+
+/* 添加举报发布信息和举报人信息 */
+router.post('/PublishNewsModel/addAccusation', function (req, res, next) {
+  //请求检测
+  const errors = req.validationErrors();
+  if (errors) {
+    req.flash('errors', errors);
+    return res.send({ state: 1, data: errors })
+  }
+  else {
+    // 主体信息
+    var publishNewsRelatedAccusation = new PublishNewsRelatedAccusation({
+      uid: guid(),
+      accusationUserID: req.body.accusationUserID,
+      accusationContent: req.body.accusationContent,
+      accusationTimestamp: new Date().toLocaleString(),
+      newsID: req.body.newsID
+    })
+
+    //保存主体信息
+    publishNewsRelatedAccusation.save((err) => {
+      if (err) {
+        console.log(err)
+        return res.send({ state: 1, data: err })
+      }
+      else {
+        return res.send({ state: 0 })
+      }
+    });
+  }
+});
+
+
+module.exports = router;
+
+
 //实例化model
-var getPublishNewsModel = function (req) {
+var getPublishNewsModel = function (req, newsID) {
   return new PublishNewsModel({
     /**
      *  基本信息区分
      */
-    _id: req.body.id,
+    uid: newsID,
     type_id: req.body.type_id,
     type_name: req.body.type_name,
     sub_type_id: req.body.sub_type_id,
@@ -79,7 +325,7 @@ var getPublishNewsModel = function (req) {
     /**
      *  发布时间
      */
-    ptime: req.body.ptime,
+    ptime: new Date().toLocaleString(),
 
     /**
      *  标题
@@ -87,8 +333,8 @@ var getPublishNewsModel = function (req) {
     title: req.body.title,
 
     /**
-  *  具体描述
-  */
+    *  具体描述
+    */
     subtitle: req.body.subtitle,
     detail_url: req.body.detail_url,
 
@@ -97,6 +343,7 @@ var getPublishNewsModel = function (req) {
      */
     doc_id: req.body.doc_id,
     is_topic: req.body.is_topic,
+    doc_content: req.body.doc_content,
     doc_url: req.body.doc_url,
     has_image: req.body.has_image,
     has_head: req.body.has_head,
@@ -135,10 +382,38 @@ var getPublishNewsModel = function (req) {
      *  跟帖人数
      */
     replyCount: req.body.replyCount,
-    votecount: req.body.votecount,
+    thumbsupCount: req.body.thumbsupCount,
     commentid: req.body.commentid
 
   });
 }
 
-module.exports = router;
+//实例化model
+//PublishNewsRelatedPictures 
+var getPublishNewsRelatedPictures = function (req, newID) {
+  var publishNewsRelatedPictures = [];
+  req.files.forEach(function (file) {
+    var publishNewsRelatedPicture = new PublishNewsRelatedPictures({
+      uid: guid(),
+      pictureName: file.filename,
+      thumbnailPictureUrl: 'thumbnailImage/' + file.filename,
+      actualPictureUrl: 'images/' + file.filename,
+      isDeleted: '0',
+      picturePath: file.path,
+      pictureSize: file.size,
+      newsID: newID
+
+    });
+    publishNewsRelatedPictures.push(publishNewsRelatedPicture);
+  }, this);
+  return publishNewsRelatedPictures;
+}
+
+
+
+function guid() {
+  function S4() {
+    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+  }
+  return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
+}

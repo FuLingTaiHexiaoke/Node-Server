@@ -4,7 +4,7 @@ var express = require('express');
 var path = require('path')
 var multer = require('multer')
 var storage = multer.diskStorage({
-  destination: path.resolve('public/uploads'),
+  destination: path.resolve('public/uploads/images'),
   filename: function (req, file, cb) {
     var fileFormat = (file.originalname).split(".");
     cb(null, file.fieldname + '-' + new Date().toLocaleString() + Date.now() + "." + fileFormat[fileFormat.length - 1]);
@@ -396,8 +396,8 @@ var getPublishNewsRelatedPictures = function (req, newID) {
     var publishNewsRelatedPicture = new PublishNewsRelatedPictures({
       uid: guid(),
       pictureName: file.filename,
-      thumbnailPictureUrl: 'thumbnailImage/' + file.filename,
-      actualPictureUrl: 'images/' + file.filename,
+      thumbnailPictureUrl: 'uploads/thumbnailImage/' + file.filename,
+      actualPictureUrl: 'uploads/images/' + file.filename,
       isDeleted: '0',
       picturePath: file.path,
       pictureSize: file.size,

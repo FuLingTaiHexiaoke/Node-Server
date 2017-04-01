@@ -27,7 +27,7 @@ const sass = require('node-sass-middleware');
 /**
  * router controllers. 
  */
-var launch = require('./controllers/index');
+var index = require('./controllers/index');
 var launch = require('./controllers/launch');
 var publishNewsController = require('./controllers/PublishNewsController');
 
@@ -124,10 +124,15 @@ app.use((req, res, next) => {
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
+
+
+
 /**
  * Primary app routes.
  */
-app.use('/index', launch);//初始化时的页面
+
+
+app.use('/index', index);//初始化时的页面
 app.use('/launch', launch);//初始化时的页面
 app.use('/publishNewsController', publishNewsController);
 

@@ -8,10 +8,10 @@ const publishNewsRelatedPictures = new mongoose.Schema({
   isDeleted: { type: String, default: '' },
   picturePath: { type: String, default: '' },
   pictureSize: { type: Number, default: 0 },
-  imageWidth: { type: Number, default: 0 },
-  imageHidth: { type: Number, default: 0 },
+  originImageWidth: { type: Number, default: 0 },
+  originImageHeight: { type: Number, default: 0 },
   thumberImageWidth: { type: Number, default: 0 },
-  thumberImageHidth: { type: Number, default: 0 },
+  thumberImageHeight: { type: Number, default: 0 },
   newsID: { type: String, default: '' },
 },
   { versionKey: false }

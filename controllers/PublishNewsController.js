@@ -417,45 +417,143 @@ var getPublishNewsModel = function (req, newsID) {
   });
 }
 
+// //实例化model
+// //PublishNewsRelatedPictures 
+// var getPublishNewsRelatedPictures = function (req, newID) {
+
+
+//   var current = Promise.resolve();
+//   Promise.all(req.files.map(function (file) {
+//     //data property
+//     var originImagePath = file.path
+//     var thumber_destination_path = 'public/uploads/thumbnailImage/' + file.filename;
+
+//     var image_width_origin
+//     var image_height_origin
+
+//     var image_width
+//     var image_height
+
+//     //first size and make to thumber
+//     function getOriginSize(path) {
+//       return new Promise(function (resolve, reject) {
+//         gm(path).size(function (err, size) {
+//           image_width_origin = size.width;
+//           image_height_origin = size.height;
+//           // resolve(size)
+//           gm(originImagePath).thumb(image_width_origin / 5, image_height_origin / 5, thumber_destination_path, 50, function (err, stdout, stderr, command) {
+//             resolve(size)
+//           });
+//         })
+//       })
+//     }
+
+//     //second size
+//     function getThumberSize(path) {
+//       return new Promise(function (resolve, reject) {
+//         gm(path).size(function (err, size) {
+//           image_width = size.width;
+//           image_height = size.height;
+//           resolve(size)
+//         })
+//       })
+//     }
+//     //model
+//     function getPictureModel() {
+//       return new Promise(function (resolve, reject) {
+//         var publishNewsRelatedPicture = new PublishNewsRelatedPictures({
+//           uid: guid(),
+//           pictureName: file.filename,
+//           thumbnailPictureUrl: 'uploads/thumbnailImage/' + file.filename,
+//           actualPictureUrl: 'uploads/images/' + file.filename,
+//           isDeleted: '0',
+//           picturePath: file.path,
+//           pictureSize: file.size,
+//           imageWidth: image_width_origin,
+//           imageHidth: image_height_origin,
+//           thumberImageWidth: image_width,
+//           thumberImageHidth: image_height,
+//           newsID: newID
+//         });
+//         // console.log("publishNewsRelatedPicture:" + publishNewsRelatedPicture);
+//         resolve(publishNewsRelatedPicture)
+//       })
+//     }
+
+//   current =  getOriginSize(originImagePath).then(function (val) {
+//       console.log('getOriginSize' + val.height);
+//       return getThumberSize(thumber_destination_path);
+//     }).then(function (size) {
+//       console.log('getThumberSize' + image_height);
+//       return getPictureModel();
+//     }).then(function (val) {
+//       //  console.log("publishNewsRelatedPicture:" + val);
+//       return val;
+//     })
+
+// return current ;
+
+//   })).then(function (models) {
+//     console.log("publishNewsRelatedPicture models :" + models);
+//   // funAsync();
+//     models.forEach(function (element) {
+//       element.save((err) => {
+//         if (err) {
+//           console.log(err)
+//           return next(err);
+//         }
+//       });
+//     })
+
+//   })
+// }
+
 //实例化model
 //PublishNewsRelatedPictures 
+
+
+
+
 var getPublishNewsRelatedPictures = function (req, newID) {
 
-
-  var current = Promise.resolve();
   Promise.all(req.files.map(function (file) {
     //data property
-    var publishNewsRelatedPictures = [];
     var originImagePath = file.path
     var thumber_destination_path = 'public/uploads/thumbnailImage/' + file.filename;
 
-    var image_width_origin
-    var image_height_origin
+    var origin_image_width
+    var origin_image_height
 
-    var image_width
-    var image_height
+    var thumb_image_width
+    var thumb_image_height
 
     //first size and make to thumber
     function getOriginSize(path) {
       return new Promise(function (resolve, reject) {
         gm(path).size(function (err, size) {
-          image_width_origin = size.width;
-          image_height_origin = size.height;
+          origin_image_width = size.width;
+          origin_image_height = size.height;
           // resolve(size)
-          gm(originImagePath).thumb(image_width_origin / 5, image_height_origin / 5, thumber_destination_path, 50, function (err, stdout, stderr, command) {
-            resolve(size)
-          });
+          if (req.files.count > 1) {
+            gm(originImagePath).thumb(60, 60, thumber_destination_path, 100, function (err, stdout, stderr, command) {
+              resolve(size)
+            });
+          }
+          else {
+            gm(originImagePath).thumb(origin_image_width / 5, origin_image_height / 5, thumber_destination_path, 100, function (err, stdout, stderr, command) {
+              resolve(size)
+            });
+          }
         })
       })
     }
-
 
     //second size
     function getThumberSize(path) {
       return new Promise(function (resolve, reject) {
         gm(path).size(function (err, size) {
-          image_width = size.width;
-          image_height = size.height;
+          thumb_image_width = size.width;
+          thumb_image_height = size.height;
           resolve(size)
         })
       })
@@ -471,10 +569,10 @@ var getPublishNewsRelatedPictures = function (req, newID) {
           isDeleted: '0',
           picturePath: file.path,
           pictureSize: file.size,
-          imageWidth: image_width_origin,
-          imageHidth: image_height_origin,
-          thumberImageWidth: image_width,
-          thumberImageHidth: image_height,
+          originImageWidth: origin_image_width,
+          originImageHeight: origin_image_height,
+          thumberImageWidth: thumb_image_width,
+          thumberImageHeight: thumb_image_height,
           newsID: newID
         });
         // console.log("publishNewsRelatedPicture:" + publishNewsRelatedPicture);
@@ -483,38 +581,19 @@ var getPublishNewsRelatedPictures = function (req, newID) {
     }
 
 
-  current =  getOriginSize(originImagePath).then(function (val) {
+    return getOriginSize(originImagePath).then(function (val) {
       console.log('getOriginSize' + val.height);
       return getThumberSize(thumber_destination_path);
     }).then(function (size) {
-      console.log('getThumberSize' + image_height);
+      // console.log('getThumberSize' + image_height);
       return getPictureModel();
     }).then(function (val) {
       //  console.log("publishNewsRelatedPicture:" + val);
       return val;
     })
 
-return current ;
-
-    // (async function () {
-    //   try {
-    //     var val;
-    //     val = await getOriginSize(originImagePath);
-    //     console.log('getOriginSize' + val);
-    //     val = await getThumberSize(thumber_destination_path);
-    //     console.log('getThumberSize' + val);
-    //     // val = await sleep(1000);
-    //     // console.log(val);
-    //   }
-    //   catch (err) {
-    //     console.log('出错啦:' + err.message);
-    //   }
-    // } ())
-
-
   })).then(function (models) {
-    console.log("publishNewsRelatedPicture models :" + models);
-
+    // console.log("publishNewsRelatedPicture models :" + models);
     models.forEach(function (element) {
       element.save((err) => {
         if (err) {
@@ -526,6 +605,7 @@ return current ;
 
   })
 }
+
 
 function guid() {
   function S4() {

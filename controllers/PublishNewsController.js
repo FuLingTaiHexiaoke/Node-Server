@@ -1,13 +1,15 @@
 var express = require('express');
 
 //file upload utilities
+var async = require("async");
 var path = require('path')
+var gm = require('gm')
 var multer = require('multer')
 var storage = multer.diskStorage({
   destination: path.resolve('public/uploads/images'),
   filename: function (req, file, cb) {
     var fileFormat = (file.originalname).split(".");
-    cb(null, file.fieldname + '-' + new Date().toLocaleString() + Date.now() + "." + fileFormat[fileFormat.length - 1]);
+    cb(null, file.fieldname + '-' + Date.now() + "." + fileFormat[fileFormat.length - 1]);
   }
 })
 var upload = multer({ storage: storage })
@@ -85,6 +87,9 @@ router.get('/PublishNewsModel/:page', function (req, res, next) {
 
 });
 
+
+
+
 /* 添加发布信息  */
 router.post('/PublishNewsModel', upload.array('uploadImage'), function (req, res, next) {
 
@@ -112,17 +117,41 @@ router.post('/PublishNewsModel', upload.array('uploadImage'), function (req, res
   });
 
   //save publishNewsModel 主体关联的图片信息
-  const publishNewsRelatedPictures = getPublishNewsRelatedPictures(req, newID);
-  publishNewsRelatedPictures.forEach(function (element) {
-    element.save((err) => {
-      if (err) {
-        console.log(err)
-        return next(err);
-      }
-    });
-  }, this);
+  getPublishNewsRelatedPictures(req, newID);
+  // const publishNewsRelatedPictures = getPublishNewsRelatedPictures(req, newID);
+  // console.log('publishNewsRelatedPictures1111' + publishNewsRelatedPictures)
+  // publishNewsRelatedPictures.forEach(function (element) {
+  //   element.save((err) => {
+  //     if (err) {
+  //       console.log(err)
+  //       return next(err);
+  //     }
+  //     //       else {
+  //     //         var imagePath = element.picturePath;
+  //     //         gm(imagePath)
+  //     //         //   .resize(240, 240, '!')
+  //     //         //   .write('public/uploads/thumbnailImage/' + element.pictureName, function (err) {
+  //     //         //     if (!err) console.log('done');
+  //     //         //     else{
+  //     //         //        console.log(err);
+  //     //         //     }
+  //     //         //   });
+
+  //     // .thumb(100 , 100, 'public/uploads/thumbnailImage/' + element.pictureName, 50, function(){})
+
+  //     //       }
+  //   });
+  // }, this);
+
+
   res.send({ state: 0 })
+
+
 });
+
+
+
+
 
 /* 删除发布信息  */
 router.delete('/PublishNewsModel', function (req, res, next) {
@@ -391,25 +420,112 @@ var getPublishNewsModel = function (req, newsID) {
 //实例化model
 //PublishNewsRelatedPictures 
 var getPublishNewsRelatedPictures = function (req, newID) {
-  var publishNewsRelatedPictures = [];
-  req.files.forEach(function (file) {
-    var publishNewsRelatedPicture = new PublishNewsRelatedPictures({
-      uid: guid(),
-      pictureName: file.filename,
-      thumbnailPictureUrl: 'uploads/thumbnailImage/' + file.filename,
-      actualPictureUrl: 'uploads/images/' + file.filename,
-      isDeleted: '0',
-      picturePath: file.path,
-      pictureSize: file.size,
-      newsID: newID
 
-    });
-    publishNewsRelatedPictures.push(publishNewsRelatedPicture);
-  }, this);
-  return publishNewsRelatedPictures;
+
+  var current = Promise.resolve();
+  Promise.all(req.files.map(function (file) {
+    //data property
+    var publishNewsRelatedPictures = [];
+    var originImagePath = file.path
+    var thumber_destination_path = 'public/uploads/thumbnailImage/' + file.filename;
+
+    var image_width_origin
+    var image_height_origin
+
+    var image_width
+    var image_height
+
+    //first size and make to thumber
+    function getOriginSize(path) {
+      return new Promise(function (resolve, reject) {
+        gm(path).size(function (err, size) {
+          image_width_origin = size.width;
+          image_height_origin = size.height;
+          // resolve(size)
+          gm(originImagePath).thumb(image_width_origin / 5, image_height_origin / 5, thumber_destination_path, 50, function (err, stdout, stderr, command) {
+            resolve(size)
+          });
+        })
+      })
+    }
+
+
+    //second size
+    function getThumberSize(path) {
+      return new Promise(function (resolve, reject) {
+        gm(path).size(function (err, size) {
+          image_width = size.width;
+          image_height = size.height;
+          resolve(size)
+        })
+      })
+    }
+    //model
+    function getPictureModel() {
+      return new Promise(function (resolve, reject) {
+        var publishNewsRelatedPicture = new PublishNewsRelatedPictures({
+          uid: guid(),
+          pictureName: file.filename,
+          thumbnailPictureUrl: 'uploads/thumbnailImage/' + file.filename,
+          actualPictureUrl: 'uploads/images/' + file.filename,
+          isDeleted: '0',
+          picturePath: file.path,
+          pictureSize: file.size,
+          imageWidth: image_width_origin,
+          imageHidth: image_height_origin,
+          thumberImageWidth: image_width,
+          thumberImageHidth: image_height,
+          newsID: newID
+        });
+        // console.log("publishNewsRelatedPicture:" + publishNewsRelatedPicture);
+        resolve(publishNewsRelatedPicture)
+      })
+    }
+
+
+  current =  getOriginSize(originImagePath).then(function (val) {
+      console.log('getOriginSize' + val.height);
+      return getThumberSize(thumber_destination_path);
+    }).then(function (size) {
+      console.log('getThumberSize' + image_height);
+      return getPictureModel();
+    }).then(function (val) {
+      //  console.log("publishNewsRelatedPicture:" + val);
+      return val;
+    })
+
+return current ;
+
+    // (async function () {
+    //   try {
+    //     var val;
+    //     val = await getOriginSize(originImagePath);
+    //     console.log('getOriginSize' + val);
+    //     val = await getThumberSize(thumber_destination_path);
+    //     console.log('getThumberSize' + val);
+    //     // val = await sleep(1000);
+    //     // console.log(val);
+    //   }
+    //   catch (err) {
+    //     console.log('出错啦:' + err.message);
+    //   }
+    // } ())
+
+
+  })).then(function (models) {
+    console.log("publishNewsRelatedPicture models :" + models);
+
+    models.forEach(function (element) {
+      element.save((err) => {
+        if (err) {
+          console.log(err)
+          return next(err);
+        }
+      });
+    })
+
+  })
 }
-
-
 
 function guid() {
   function S4() {

@@ -519,6 +519,7 @@ var getPublishNewsRelatedPictures = function (req, newID) {
   Promise.all(req.files.map(function (file) {
     //data property
     var originImagePath = file.path
+      // console.log('originImagePath' + originImagePath);
     var thumber_destination_path = 'public/uploads/thumbnailImage/' + file.filename;
 
     var origin_image_width
@@ -531,6 +532,7 @@ var getPublishNewsRelatedPictures = function (req, newID) {
     function getOriginSize(path) {
       return new Promise(function (resolve, reject) {
         gm(path).size(function (err, size) {
+             console.log('getOriginSize size' + size);
           origin_image_width = size.width;
           origin_image_height = size.height;
           // resolve(size)

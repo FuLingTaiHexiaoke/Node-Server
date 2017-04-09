@@ -510,16 +510,11 @@ var getPublishNewsModel = function (req, newsID) {
 
 //实例化model
 //PublishNewsRelatedPictures 
-
-
-
-
 var getPublishNewsRelatedPictures = function (req, newID) {
 
   Promise.all(req.files.map(function (file) {
     //data property
     var originImagePath = file.path
-      // console.log('originImagePath' + originImagePath);
     var thumber_destination_path = 'public/uploads/thumbnailImage/' + file.filename;
 
     var origin_image_width
@@ -532,7 +527,6 @@ var getPublishNewsRelatedPictures = function (req, newID) {
     function getOriginSize(path) {
       return new Promise(function (resolve, reject) {
         gm(path).size(function (err, size) {
-             console.log('getOriginSize size' + size);
           origin_image_width = size.width;
           origin_image_height = size.height;
           // resolve(size)
@@ -584,10 +578,10 @@ var getPublishNewsRelatedPictures = function (req, newID) {
 
 
     return getOriginSize(originImagePath).then(function (val) {
-      console.log('getOriginSize' + val.height);
+      // console.log('getOriginSize' + val.height);
       return getThumberSize(thumber_destination_path);
     }).then(function (size) {
-      // console.log('getThumberSize' + image_height);
+      // console.log('getThumberSize' + thumb_image_height);
       return getPictureModel();
     }).then(function (val) {
       //  console.log("publishNewsRelatedPicture:" + val);

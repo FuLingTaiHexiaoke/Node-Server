@@ -1,0 +1,2 @@
+db.publishnewsrelatedpictures.remove({})
+db.b_resource_collections.remove({})

@@ -6,7 +6,8 @@
       "watch": "./",
       "ignore_watch": [
         ".git",
-        "public"
+        "public",
+        "备忘录"
       ],
       "log_date_format": "YYYY-MM-DD HH:mm Z"
     }

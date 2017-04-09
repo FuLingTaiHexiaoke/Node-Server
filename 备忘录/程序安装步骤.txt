@@ -1,0 +1,26 @@
+启动MongoDB
+mongod --config /usr/local/etc/mongod.conf
+
+ifconfig | grep "inet " | grep -v 127.0.0.1 
+cd /Users/hanjinbo/Documents/xiaoke/练习项目/Node-Server 
+cd /Users/Psylife/Documents/xiaoke/练习项目/Node-Server
+
+pm2 
+sudo npm install -g pm2
+pm2 delete all --watch
+pm2 list
+npm start
+pm2 start processes.json
+pm2 logs
+pm2 flush
+
+
+npm install 
+
+node app.js listen EADDRINUSE:::防止端口被占用
+
+//gm
+brew install imagemagick
+brew install graphicsmagick
+npm install gm --save
+

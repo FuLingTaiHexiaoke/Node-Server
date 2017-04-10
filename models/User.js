@@ -6,7 +6,10 @@ const userSchema = new mongoose.Schema({
   password: {type:String,default:''},
   passwordResetToken: {type:String,default:''},
   passwordResetExpires: {type:Date,default:''},
-  userGravatar:{type:String,default:''},
+  userAvatar:{type:String,default:''},
+  gender: {type:String,default:''},
+  location: {type:String,default:''}
+    // website: String,
 });
 
 const User = mongoose.model('User', userSchema);

@@ -6,7 +6,7 @@ var path = require('path')
 var gm = require('gm')
 var multer = require('multer')
 var storage = multer.diskStorage({
-  destination: path.resolve('public/uploads/images'),
+  destination: path.resolve('public/uploads/user_images'),
   filename: function (req, file, cb) {
     var fileFormat = (file.originalname).split(".");
     cb(null, file.fieldname + '-' + Date.now() + "." + fileFormat[fileFormat.length - 1]);
@@ -15,7 +15,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 //models
-const PublishNewsModel = require('../models/PublishNewsModel');
+const PublishNewsModel = require('../models/User');
 const PublishNewsRelatedAccusation = require('../models/PublishNewsRelatedAccusation');
 const PublishNewsRelatedComments = require('../models/PublishNewsRelatedComments');
 const PublishNewsRelatedCommentsReply = require('../models/PublishNewsRelatedCommentsReply');
@@ -37,33 +37,6 @@ router.get('/PublishNewsModel/:page', function (req, res, next) {
   var condition = {};                 //条件
   var skipnum = (currentPage - 1) * pageSize;   //跳过数
 
-  // PublishNewsModel.find(condition).skip(skipnum).limit(pageSize).sort(sort).exec(function (err, docs) {
-  //   if (err) {
-  //     console.log("Error:" + err);
-  //   }
-  //   else {
-  //     // console.log("docs:" + docs);
-  //     // res.send(docs);
-  //     // docs.forEach(function (doc) {
-  //     //   PublishNewsRelatedPictures.find({ newsID: doc.uid }, (err, existingPictures) => {
-  //     //     // console.log(existingPictures)
-  //     //     doc.image_urls =JSON.stringify(existingPictures) ;
-  //     //     // doc.image_urls='111';
-  //     //     //  console.log( doc.image_urls)
-  //     //   });
-  //     // }, this);
-  //     docs.map(function (doc) {
-  //       PublishNewsRelatedPictures.find({ newsID: doc.uid }, (err, existingPictures) => {
-  //         doc.image_urls = JSON.stringify(existingPictures);
-  //       });
-  //     }, this);
-
-  //     // res.send(docs);
-  //   // return docs;
-  //   }
-  // }).then(function (docs) {
-  //   res.send(docs);
-  // })
 
   PublishNewsModel.find(condition).skip(skipnum).limit(pageSize).sort(sort).exec(function (err, docs) {
     if (err) {
@@ -118,31 +91,6 @@ router.post('/PublishNewsModel', upload.array('uploadImage'), function (req, res
 
   //save publishNewsModel 主体关联的图片信息
   getPublishNewsRelatedPictures(req, newID);
-  // const publishNewsRelatedPictures = getPublishNewsRelatedPictures(req, newID);
-  // console.log('publishNewsRelatedPictures1111' + publishNewsRelatedPictures)
-  // publishNewsRelatedPictures.forEach(function (element) {
-  //   element.save((err) => {
-  //     if (err) {
-  //       console.log(err)
-  //       return next(err);
-  //     }
-  //     //       else {
-  //     //         var imagePath = element.picturePath;
-  //     //         gm(imagePath)
-  //     //         //   .resize(240, 240, '!')
-  //     //         //   .write('public/uploads/thumbnailImage/' + element.pictureName, function (err) {
-  //     //         //     if (!err) console.log('done');
-  //     //         //     else{
-  //     //         //        console.log(err);
-  //     //         //     }
-  //     //         //   });
-
-  //     // .thumb(100 , 100, 'public/uploads/thumbnailImage/' + element.pictureName, 50, function(){})
-
-  //     //       }
-  //   });
-  // }, this);
-
 
   res.send({ state: 0 })
 
@@ -417,96 +365,6 @@ var getPublishNewsModel = function (req, newsID) {
   });
 }
 
-// //实例化model
-// //PublishNewsRelatedPictures 
-// var getPublishNewsRelatedPictures = function (req, newID) {
-
-
-//   var current = Promise.resolve();
-//   Promise.all(req.files.map(function (file) {
-//     //data property
-//     var originImagePath = file.path
-//     var thumber_destination_path = 'public/uploads/thumbnailImage/' + file.filename;
-
-//     var image_width_origin
-//     var image_height_origin
-
-//     var image_width
-//     var image_height
-
-//     //first size and make to thumber
-//     function getOriginSize(path) {
-//       return new Promise(function (resolve, reject) {
-//         gm(path).size(function (err, size) {
-//           image_width_origin = size.width;
-//           image_height_origin = size.height;
-//           // resolve(size)
-//           gm(originImagePath).thumb(image_width_origin / 5, image_height_origin / 5, thumber_destination_path, 50, function (err, stdout, stderr, command) {
-//             resolve(size)
-//           });
-//         })
-//       })
-//     }
-
-//     //second size
-//     function getThumberSize(path) {
-//       return new Promise(function (resolve, reject) {
-//         gm(path).size(function (err, size) {
-//           image_width = size.width;
-//           image_height = size.height;
-//           resolve(size)
-//         })
-//       })
-//     }
-//     //model
-//     function getPictureModel() {
-//       return new Promise(function (resolve, reject) {
-//         var publishNewsRelatedPicture = new PublishNewsRelatedPictures({
-//           uid: guid(),
-//           pictureName: file.filename,
-//           thumbnailPictureUrl: 'uploads/thumbnailImage/' + file.filename,
-//           actualPictureUrl: 'uploads/images/' + file.filename,
-//           isDeleted: '0',
-//           picturePath: file.path,
-//           pictureSize: file.size,
-//           imageWidth: image_width_origin,
-//           imageHidth: image_height_origin,
-//           thumberImageWidth: image_width,
-//           thumberImageHidth: image_height,
-//           newsID: newID
-//         });
-//         // console.log("publishNewsRelatedPicture:" + publishNewsRelatedPicture);
-//         resolve(publishNewsRelatedPicture)
-//       })
-//     }
-
-//   current =  getOriginSize(originImagePath).then(function (val) {
-//       console.log('getOriginSize' + val.height);
-//       return getThumberSize(thumber_destination_path);
-//     }).then(function (size) {
-//       console.log('getThumberSize' + image_height);
-//       return getPictureModel();
-//     }).then(function (val) {
-//       //  console.log("publishNewsRelatedPicture:" + val);
-//       return val;
-//     })
-
-// return current ;
-
-//   })).then(function (models) {
-//     console.log("publishNewsRelatedPicture models :" + models);
-//   // funAsync();
-//     models.forEach(function (element) {
-//       element.save((err) => {
-//         if (err) {
-//           console.log(err)
-//           return next(err);
-//         }
-//       });
-//     })
-
-//   })
-// }
 
 //实例化model
 //PublishNewsRelatedPictures 

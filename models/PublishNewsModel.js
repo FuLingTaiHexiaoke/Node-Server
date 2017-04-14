@@ -7,10 +7,11 @@ const  m_resource_collection_= new mongoose.Schema({
 /**
  *  基本信息区分
  */
+//newsID
  uid: { type: String },
  type_id: { type: Number  },
  type_name: { type: String },
- sub_type_id: { type: Number  },
+ sub_type_id: { type: String ,default:''},
  sub_type_name: { type: String ,default:''},
 
 /**
@@ -27,6 +28,7 @@ const  m_resource_collection_= new mongoose.Schema({
  *  具体描述
  */
  subtitle: { type: String  ,default:''},
+ //thumberup_users
  detail_url: { type: String  ,default:''},
 
 /**

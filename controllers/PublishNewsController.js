@@ -22,6 +22,7 @@ const PublishNewsRelatedCommentsReply = require('../models/PublishNewsRelatedCom
 const PublishNewsRelatedPictures = require('../models/PublishNewsRelatedPictures');
 const PublishNewsRelatedThumberup = require('../models/PublishNewsRelatedThumberup');
 
+const UserModel = require('../models/User');
 
 var router = express.Router();
 
@@ -65,6 +66,28 @@ router.get('/PublishNewsModel/:page', function (req, res, next) {
   //   res.send(docs);
   // })
 
+  // 2017-4-14 
+  // PublishNewsModel.find(condition).skip(skipnum).limit(pageSize).sort(sort).exec(function (err, docs) {
+  //   if (err) {
+  //     console.log("Error:" + err);
+  //   }
+  //   else {
+  //     var current = Promise.resolve();
+  //     Promise.all(docs.map(function (doc) {
+  //       current = current.then(function () {
+  //         return PublishNewsRelatedPictures.find({ newsID: doc.uid })// returns promise
+  //       }).then(function (result) {
+  //         doc.image_urls = JSON.stringify(result);
+  //         return doc
+  //       });
+  //       return current;
+  //     })).then(function (results) {
+  //       res.send(results);
+  //     })
+  //   }
+  // });
+
+
   PublishNewsModel.find(condition).skip(skipnum).limit(pageSize).sort(sort).exec(function (err, docs) {
     if (err) {
       console.log("Error:" + err);
@@ -72,13 +95,32 @@ router.get('/PublishNewsModel/:page', function (req, res, next) {
     else {
       var current = Promise.resolve();
       Promise.all(docs.map(function (doc) {
+
         current = current.then(function () {
           return PublishNewsRelatedPictures.find({ newsID: doc.uid })// returns promise
         }).then(function (result) {
+
           doc.image_urls = JSON.stringify(result);
+          return PublishNewsRelatedThumberup.find({ newsID: doc.uid })// returns promise
+
+        }).then(function (result) {
+
+          //get thumberup user info 
+          return Promise.all(result.map(function (val) {
+            return UserModel.findOne({ login_name: val.thumberupUserID })
+          })).then(function (models) {
+            return models
+          })
+
+        }).then(function (thumberupUsers) {
+
+          doc.detail_url = JSON.stringify(thumberupUsers);
           return doc
-        });
+
+        })
+
         return current;
+
       })).then(function (results) {
         res.send(results);
       })
@@ -211,6 +253,21 @@ router.delete('/PublishNewsModel', function (req, res, next) {
 
 });
 
+
+/* 添加点赞数量和点赞人 */
+router.post('/PublishNewsModel/getThumberup', function (req, res, next) {
+  //请求检测
+  const errors = req.validationErrors();
+  if (errors) {
+    req.flash('errors', errors);
+    return res.send({ state: 1, data: errors })
+  }
+  else {
+    // 主体信息
+
+  }
+});
+
 /* 添加点赞数量和点赞人 */
 router.post('/PublishNewsModel/addThumberup', function (req, res, next) {
   //请求检测
@@ -239,7 +296,28 @@ router.post('/PublishNewsModel/addThumberup', function (req, res, next) {
       }
     });
   }
+});
 
+/* 添加点赞数量和点赞人 */
+router.post('/PublishNewsModel/deleteThumberup', function (req, res, next) {
+  //请求检测
+  const errors = req.validationErrors();
+  if (errors) {
+    req.flash('errors', errors);
+    return res.send({ state: 1, data: errors })
+  }
+  else {
+    // 删除点赞
+    PublishNewsRelatedThumberup.remove({ newsID: req.body.newsID, thumberupUserID: req.body.thumberupUserID }, (err) => {
+      if (err) {
+        console.log(err)
+        return res.send({ state: 1, data: err })
+      }
+      else {
+        return res.send({ state: 0 })
+      }
+    })
+  }
 });
 
 /* 添加跟帖评论信息和跟帖评论人信息 */
@@ -593,7 +671,7 @@ var getPublishNewsRelatedPictures = function (req, newID) {
     })
 
   })).then(function (models) {
-    console.log("publishNewsRelatedPicture models :" + models);
+    // console.log("publishNewsRelatedPicture models :" + models);
     models.forEach(function (element) {
       element.save((err) => {
         if (err) {

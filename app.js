@@ -30,7 +30,7 @@ const sass = require('node-sass-middleware');
 var index = require('./controllers/index');
 var launch = require('./controllers/launch');
 var publishNewsController = require('./controllers/PublishNewsController');
-
+var userController = require('./controllers/UserController');
 
 
 
@@ -95,12 +95,19 @@ app.use(passport.session());
 app.use(flash());
 app.use((req, res, next) => {
   // if (req.path === '/api/upload') {
-  if (req.path === '/publishNewsController/PublishNewsModel') {
+  // if (req.path === '/publishNewsController/PublishNewsModel') {
 
-    next();
-  } else {
-    lusca.csrf()(req, res, next);
-  }
+  //   next();
+  // }
+  // else  if (req.path === '/userController/User') {
+
+  //   next();
+  // }  else {
+  //   lusca.csrf()(req, res, next);
+  // }
+
+  next();
+
 });
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
@@ -135,6 +142,8 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 app.use('/index', index);//初始化时的页面
 app.use('/launch', launch);//初始化时的页面
 app.use('/publishNewsController', publishNewsController);
+app.use('/userController', userController);
+
 
 // app.post('/publishNewsController/PublishNewsModel', upload.array('uploadImage'), function (req, res) {
 //    console.log(req.files[0]);  // 上传的文件信息

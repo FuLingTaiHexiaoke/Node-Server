@@ -130,6 +130,63 @@ router.get('/PublishNewsModel/:page', function (req, res, next) {
 });
 
 
+/* 分段请求所有发布的信息 */
+router.post('/PublishNewsModel/getNewsModel', function (req, res, next) {
+
+  var pageSize = 15;                   //一页多少条
+  var currentPage = req.body.page;                //当前第几页
+  var sort = { 'ptime': -1 };            //排序（按发布时间倒序）
+  var condition = {};                 //条件
+  var skipnum = (currentPage - 1) * pageSize;   //跳过数
+
+  PublishNewsModel.find(condition).skip(skipnum).limit(pageSize).sort(sort).exec(function (err, docs) {
+    if (err) {
+      console.log("Error:" + err);
+    }
+    else {
+      var current = Promise.resolve();
+      Promise.all(docs.map(function (doc) {
+
+        current = current.then(function () {
+          return PublishNewsRelatedPictures.find({ newsID: doc.uid })// returns promise
+        }).then(function (result) {
+
+          doc.image_urls = JSON.stringify(result);
+          return PublishNewsRelatedThumberup.find({ newsID: doc.uid })// returns promise
+
+        }).then(function (result) {
+
+          //get thumberup user info 
+          return Promise.all(result.map(function (val) {
+            if (val.thumberupUserID == req.body.userID) {
+              doc.isThumberuped = 1;
+            }
+            else {
+              doc.isThumberuped = 0;
+            }
+            return UserModel.findOne({ login_name: val.thumberupUserID })
+          })).then(function (models) {
+            return models
+          })
+
+        }).then(function (thumberupUsers) {
+
+          doc.detail_url = JSON.stringify(thumberupUsers);
+          return doc
+
+        })
+
+        return current;
+
+      })).then(function (results) {
+        res.send(results);
+      })
+    }
+  });
+
+});
+
+
 
 
 /* 添加发布信息  */
@@ -277,24 +334,42 @@ router.post('/PublishNewsModel/addThumberup', function (req, res, next) {
     return res.send({ state: 1, data: errors })
   }
   else {
-    // 主体信息
-    var publishNewsRelatedThumberup = new PublishNewsRelatedThumberup({
-      uid: guid(),
-      thumberupUserID: req.body.thumberupUserID,
-      thumberupTimestamp: new Date().toLocaleString(),
-      newsID: req.body.newsID
-    })
+    //检查是否已经点赞，如果已经点赞则删除数据，否则添加一条数据 
+    var isThumberuped = req.body.isThumberuped;
 
-    //保存主体信息
-    publishNewsRelatedThumberup.save((err) => {
-      if (err) {
-        console.log(err)
-        return res.send({ state: 1, data: err })
-      }
-      else {
-        return res.send({ state: 0 })
-      }
-    });
+    if (isThumberuped) {
+      PublishNewsRelatedThumberup.remove({ 'newsID': req.body.newsID, 'thumberupUserID': req.body.thumberupUserID }, (err) => {
+        if (err) {
+          console.log(err)
+          return res.send({ state: 1, data: err })
+        }
+        else {
+          return res.send({ state: 0 })
+        }
+      })
+    }
+    //新增
+    else {
+      // 主体信息
+      var publishNewsRelatedThumberup = new PublishNewsRelatedThumberup({
+        uid: guid(),
+        thumberupUserID: req.body.thumberupUserID,
+        thumberupTimestamp: new Date().toLocaleString(),
+        newsID: req.body.newsID
+      })
+
+      //保存主体信息
+      publishNewsRelatedThumberup.save((err) => {
+        if (err) {
+          console.log(err)
+          return res.send({ state: 1, data: err })
+        }
+        else {
+          return res.send({ state: 0 })
+        }
+      });
+    }
+
   }
 });
 
@@ -308,20 +383,20 @@ router.post('/PublishNewsModel/deleteThumberup', function (req, res, next) {
   }
   else {
     // 删除点赞
-    PublishNewsRelatedThumberup.remove({ newsID: req.body.newsID, thumberupUserID: req.body.thumberupUserID }, (err) => {
-      if (err) {
-        console.log(err)
-        return res.send({ state: 1, data: err })
-      }
-      else {
-        return res.send({ state: 0 })
-      }
-    })
+    // PublishNewsRelatedThumberup.remove({ newsID: req.body.newsID, thumberupUserID: req.body.thumberupUserID }, (err) => {
+    //   if (err) {
+    //     console.log(err)
+    //     return res.send({ state: 1, data: err })
+    //   }
+    //   else {
+    //     return res.send({ state: 0 })
+    //   }
+    // })
   }
 });
 
 /* 添加跟帖评论信息和跟帖评论人信息 */
-router.post('/PublishNewsModel/addComments', function (req, res, next) {
+router.post('/PublishNewsModel/addComment', function (req, res, next) {
   //请求检测
   const errors = req.validationErrors();
   if (errors) {
@@ -329,12 +404,15 @@ router.post('/PublishNewsModel/addComments', function (req, res, next) {
     return res.send({ state: 1, data: errors })
   }
   else {
+
     // 主体信息
     var publishNewsRelatedComments = new PublishNewsRelatedComments({
-      uid: guid(),
-      commentUserID: req.body.commentUserID,
-      CommentContent: req.body.CommentContent,
-      commentTimestamp: new Date().toLocaleString(),
+      // uid: guid(),
+      fromUserID: req.body.fromUserID,
+      toUserID: req.body.toUserID,
+      content: req.body.CommentContent,
+      isReply: req.body.isReply,
+      timestamp: new Date().toLocaleString(),
       newsID: req.body.newsID
     })
 
@@ -424,7 +502,7 @@ var getPublishNewsModel = function (req, newsID) {
      *  基本信息区分
      */
     uid: newsID,
-    type_id: req.body.type_id,
+    // isThumberuped: req.body.isThumberuped,
     type_name: req.body.type_name,
     sub_type_id: req.body.sub_type_id,
     sub_type_name: req.body.sub_type_name,

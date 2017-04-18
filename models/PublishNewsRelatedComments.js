@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 
 const publishNewsRelatedComments = new mongoose.Schema({
-  uid: { type: String, unique: true,default:'' },
-  commentUserID:{type:String,default:''},
-  CommentContent: {type:String,default:''},
-  commentTimestamp:{type:Date,default:''}, 
-  newsID:{type:String,default:''}
+  fromUserID: { type: String, default: '' },
+  toUserID: { type: String, default: '' },
+  content: { type: String, default: '' },
+  isReply: { type: Number, default: 0 },
+  timestamp: { type: Date, default: '' },
+  newsID: { type: String, default: '' }
 },
- { versionKey: false }
- );
+  { versionKey: false }
+);
 
 const PublishNewsRelatedComments = mongoose.model('PublishNewsRelatedComments', publishNewsRelatedComments);
 

@@ -152,18 +152,18 @@ router.post('/PublishNewsModel/getNewsModel', function (req, res, next) {
         }).then(function (result) {
 
           doc.image_urls = JSON.stringify(result);
-          return PublishNewsRelatedThumberup.find({ newsID: doc.uid })// returns promise
+          return PublishNewsRelatedThumberup.find({ newsID: doc.uid }).sort({'thumberupTimestamp':-1}).exec()// returns promise
 
         }).then(function (result) {
-
           //get thumberup user info 
           return Promise.all(result.map(function (val) {
+            // console.log('req.body.userID'+req.body.userID)
             if (val.thumberupUserID == req.body.userID) {
               doc.isThumberuped = 1;
             }
-            else {
-              doc.isThumberuped = 0;
-            }
+            // else {
+            //   doc.isThumberuped = 0;
+            // }
             return UserModel.findOne({ login_name: val.thumberupUserID })
           })).then(function (models) {
             return models
@@ -336,8 +336,9 @@ router.post('/PublishNewsModel/addThumberup', function (req, res, next) {
   else {
     //检查是否已经点赞，如果已经点赞则删除数据，否则添加一条数据 
     var isThumberuped = req.body.isThumberuped;
-
-    if (isThumberuped) {
+      // console.log('isThumberuped'+isThumberuped)
+    if (isThumberuped==1) {
+          // console.log('isThumberuped1'+isThumberuped)
       PublishNewsRelatedThumberup.remove({ 'newsID': req.body.newsID, 'thumberupUserID': req.body.thumberupUserID }, (err) => {
         if (err) {
           console.log(err)
@@ -350,6 +351,7 @@ router.post('/PublishNewsModel/addThumberup', function (req, res, next) {
     }
     //新增
     else {
+                // console.log('isThumberuped2'+isThumberuped)
       // 主体信息
       var publishNewsRelatedThumberup = new PublishNewsRelatedThumberup({
         uid: guid(),

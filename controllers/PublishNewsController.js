@@ -115,6 +115,11 @@ router.get('/PublishNewsModel/:page', function (req, res, next) {
         }).then(function (thumberupUsers) {
 
           doc.detail_url = JSON.stringify(thumberupUsers);
+          return PublishNewsRelatedComments.find({ newsID: doc.uid })// returns promise
+
+        }).then(function (comments) {
+console.log('comments'+comments);
+          doc.subtitle = JSON.stringify(comments);
           return doc
 
         })
@@ -152,7 +157,7 @@ router.post('/PublishNewsModel/getNewsModel', function (req, res, next) {
         }).then(function (result) {
 
           doc.image_urls = JSON.stringify(result);
-          return PublishNewsRelatedThumberup.find({ newsID: doc.uid }).sort({'thumberupTimestamp':-1}).exec()// returns promise
+          return PublishNewsRelatedThumberup.find({ newsID: doc.uid }).sort({ 'thumberupTimestamp': -1 }).exec()// returns promise
 
         }).then(function (result) {
           //get thumberup user info 
@@ -172,6 +177,11 @@ router.post('/PublishNewsModel/getNewsModel', function (req, res, next) {
         }).then(function (thumberupUsers) {
 
           doc.detail_url = JSON.stringify(thumberupUsers);
+          return PublishNewsRelatedComments.find({ newsID: doc.uid })// returns promise
+
+        }).then(function (comments) {
+          // console.log('comments'+comments);
+          doc.subtitle = JSON.stringify(comments);
           return doc
 
         })
@@ -336,9 +346,9 @@ router.post('/PublishNewsModel/addThumberup', function (req, res, next) {
   else {
     //检查是否已经点赞，如果已经点赞则删除数据，否则添加一条数据 
     var isThumberuped = req.body.isThumberuped;
-      // console.log('isThumberuped'+isThumberuped)
-    if (isThumberuped==1) {
-          // console.log('isThumberuped1'+isThumberuped)
+    // console.log('isThumberuped'+isThumberuped)
+    if (isThumberuped == 1) {
+      // console.log('isThumberuped1'+isThumberuped)
       PublishNewsRelatedThumberup.remove({ 'newsID': req.body.newsID, 'thumberupUserID': req.body.thumberupUserID }, (err) => {
         if (err) {
           console.log(err)
@@ -351,7 +361,7 @@ router.post('/PublishNewsModel/addThumberup', function (req, res, next) {
     }
     //新增
     else {
-                // console.log('isThumberuped2'+isThumberuped)
+      // console.log('isThumberuped2'+isThumberuped)
       // 主体信息
       var publishNewsRelatedThumberup = new PublishNewsRelatedThumberup({
         uid: guid(),
@@ -375,27 +385,6 @@ router.post('/PublishNewsModel/addThumberup', function (req, res, next) {
   }
 });
 
-/* 添加点赞数量和点赞人 */
-router.post('/PublishNewsModel/deleteThumberup', function (req, res, next) {
-  //请求检测
-  const errors = req.validationErrors();
-  if (errors) {
-    req.flash('errors', errors);
-    return res.send({ state: 1, data: errors })
-  }
-  else {
-    // 删除点赞
-    // PublishNewsRelatedThumberup.remove({ newsID: req.body.newsID, thumberupUserID: req.body.thumberupUserID }, (err) => {
-    //   if (err) {
-    //     console.log(err)
-    //     return res.send({ state: 1, data: err })
-    //   }
-    //   else {
-    //     return res.send({ state: 0 })
-    //   }
-    // })
-  }
-});
 
 /* 添加跟帖评论信息和跟帖评论人信息 */
 router.post('/PublishNewsModel/addComment', function (req, res, next) {
@@ -409,10 +398,12 @@ router.post('/PublishNewsModel/addComment', function (req, res, next) {
 
     // 主体信息
     var publishNewsRelatedComments = new PublishNewsRelatedComments({
-      // uid: guid(),
+      uid: guid(),
       fromUserID: req.body.fromUserID,
+      fromUserName: req.body.fromUserName,
       toUserID: req.body.toUserID,
-      content: req.body.CommentContent,
+      toUserName: req.body.toUserName,
+      content: req.body.content,
       isReply: req.body.isReply,
       timestamp: new Date().toLocaleString(),
       newsID: req.body.newsID
@@ -431,36 +422,36 @@ router.post('/PublishNewsModel/addComment', function (req, res, next) {
   }
 });
 
-/* 添加回复跟帖评论信息 */
-router.post('/PublishNewsModel/addCommentsReply', function (req, res, next) {
-  //请求检测
-  const errors = req.validationErrors();
-  if (errors) {
-    req.flash('errors', errors);
-    return res.send({ state: 1, data: errors })
-  }
-  else {
-    // 主体信息
-    var publishNewsRelatedCommentsReply = new PublishNewsRelatedCommentsReply({
-      uid: guid(),
-      commentID: req.body.commentUserID,
-      replyContent: req.body.replyContent,
-      replyTimestamp: new Date().toLocaleString(),
-      newsID: req.body.newsID
-    })
+// /* 添加回复跟帖评论信息 */
+// router.post('/PublishNewsModel/addCommentsReply', function (req, res, next) {
+//   //请求检测
+//   const errors = req.validationErrors();
+//   if (errors) {
+//     req.flash('errors', errors);
+//     return res.send({ state: 1, data: errors })
+//   }
+//   else {
+//     // 主体信息
+//     var publishNewsRelatedCommentsReply = new PublishNewsRelatedCommentsReply({
+//       uid: guid(),
+//       commentID: req.body.commentUserID,
+//       replyContent: req.body.replyContent,
+//       replyTimestamp: new Date().toLocaleString(),
+//       newsID: req.body.newsID
+//     })
 
-    //保存主体信息
-    publishNewsRelatedCommentsReply.save((err) => {
-      if (err) {
-        console.log(err)
-        return res.send({ state: 1, data: err })
-      }
-      else {
-        return res.send({ state: 0 })
-      }
-    });
-  }
-});
+//     //保存主体信息
+//     publishNewsRelatedCommentsReply.save((err) => {
+//       if (err) {
+//         console.log(err)
+//         return res.send({ state: 1, data: err })
+//       }
+//       else {
+//         return res.send({ state: 0 })
+//       }
+//     });
+//   }
+// });
 
 /* 添加举报发布信息和举报人信息 */
 router.post('/PublishNewsModel/addAccusation', function (req, res, next) {

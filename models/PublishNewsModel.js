@@ -28,7 +28,7 @@ const  m_resource_collection_= new mongoose.Schema({
 /**
  *  具体描述
  */
- //
+ //sharingComments
  subtitle: { type: String  ,default:''},
  //thumberup_users
  detail_url: { type: String  ,default:''},

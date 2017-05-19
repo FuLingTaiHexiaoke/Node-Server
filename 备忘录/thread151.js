@@ -435,6 +435,7 @@ $(document).ready(function(){
 
     //寮曠敤鍥炲
     $('.discuss_point .discuss_popr').live('click',function(){
+        // <div class="discuss_popr" data-pid="15387721" data-floor="2" data-authorid="36380" data-postdate="2017-05-14 09:57" data-author="老鲫壳">
         arr = new Object();
         arr.pid = String($(this).attr('data-pid'));
         arr.author = $(this).attr('data-author');

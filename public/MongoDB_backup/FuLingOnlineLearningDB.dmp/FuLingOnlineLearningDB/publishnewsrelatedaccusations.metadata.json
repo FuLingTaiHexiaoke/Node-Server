@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"FuLingOnlineLearningDB.publishnewsrelatedaccusations"},{"v":1,"unique":true,"key":{"uid":1},"name":"uid_1","ns":"FuLingOnlineLearningDB.publishnewsrelatedaccusations","background":true}]}
